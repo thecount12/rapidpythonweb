@@ -91,23 +91,23 @@ WSGI_APPLICATION = 'rapidpythonweb.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
-# DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#        'NAME': 'quickpython',
-#        'USER': 'quickpython',
-#        'PASSWORD': 'dune02',
-#        'HOST': 'localhost',
-#        'PORT': '5432',
-#    }
-# }
+DATABASES = {
+   'default': {
+       'ENGINE': 'django.db.backends.postgresql_psycopg2',
+       'NAME': 'quickpython',
+       'USER': 'quickpython',
+       'PASSWORD': 'dune02',
+       'HOST': 'localhost',
+       'PORT': '5432',
+   }
+}
 
 DATABASES = {'default': dj_database_url.config()}
 
@@ -164,5 +164,5 @@ if USE_S3:
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3-website-us-west-2.amazonaws.com'
     # s3 static settings
     MEDIAFILES_LOCATION = 'media'
-    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/'
-    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    # MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/'
+    DEFAULT_FILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
