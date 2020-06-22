@@ -1,0 +1,69 @@
+v class="Standard">
+William Gunnells has been building computers since he was 10 years old. While hardware is his passion he loves to exploit the various hardware features through software. Hardware has changed so much in the last 30 years. The market wants smaller, faster, better. It’s the same with software. Python is smaller, faster, and better. With more than 25 years as a programmer, network engineer, and security engineer. He designs and engineers from scratch full service solutions using open source tools to enterprise standards for the target market. His diverse background is as follows:
+</div>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--6"></a>Network Penetration
+</h4>
+<div class="Standard">
+Working knowledge of buffer overflows, race conditions, protocol hijacking, replay attacks, stealth attacks, network sniffing, password cracking, denial of service, spoofing, covert channels, network tunneling, connection bouncing, system call hijacking and &ldquo;Userland rootkits&rdquo;. Concentrated knowledge on TCP/IP and network attack scenarios.
+</div>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--7"></a>Programming
+</h4>
+<div class="Standard">
+He is proficient in shell scripting (bash, CSH), C, Perl, Python, PHP, GNU debugger and build tools (Automake, Autoconf, Libtool), Version Control (CVS, RCS), Perforce, GIT, and SVN on large-scale development projects. Extensive experience at utilization of both asymmetric and symmetric ciphers. He has developed custom code for OpenBSD and Linux Loadable Kernel Modules (LKM). Experience using Queue, Libnet, Libpcap, Pthreads and Ncurses API’s. Extensive research in theory and practical implementation of network protocols: [R]ARP, DNS, IPv4 IPv6, ICMP, GMP, OSPF, RIP, TCP, UDP, and SNMP. Vast experience in web development (CMF, CRM, ERP), web languages, HTML, Python, PHP, XML, CSS, MySQL, Postgres, Gadfly, and SQLite.
+</div>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--8"></a>Network Security and Forensics Investigation:
+</h4>
+<div class="Standard">
+Extensive experience with AIX, BSD(i), IRIX, HPUX, Linux, SCO, Solaris, Snort Intrusion Detection Systems. Configuration and Management of Checkpoint, IPF, OpenBSD PF, IPtables, Cisco (ASA, ASAFWSM, ASASM) and Raptor Firewalls. He has extensive technical writing experience, documenting many Operating Systems in a threatened scenario, extensive forensics analysis and assessment experience of enterprise environments, investigative procedures and documentation.
+</div>
+<ul>
+<li>
+Website Backend Development 
+</li>
+<li>
+Responsive Web Tool Development 
+</li>
+<li>
+Content Management Systems 
+</li>
+<li>
+WordPress Theme Integration 
+</li>
+<li>
+Drupal Theme Integration 
+</li>
+<li>
+Mobile Platform Development 
+</li>
+<li>
+Usability Testing 
+</li>
+<li>
+Django Python Integration 
+</li>
+<li>
+Python Development 
+</li>
+<li>
+Content Management Framework Creation 
+</li>
+<li>
+Analytics 
+</li>
+<li>
+Social Media 
+</li>
+<li>
+Embedded Systems Development 
+</li>
+<li>
+ADC Systems Development
+</li>
+
+</ul>
+<div class="Standard">
+In his spare time he writes web applications for small contracts, geeks out on new technologies, and designs gambling software. 
+</div>

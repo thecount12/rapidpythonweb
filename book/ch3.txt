@@ -1,0 +1,938 @@
+<link rel="stylesheet" href="/static/lyx.css" type="text/css" media="all"/>
+<p><b>Input - Data structures, Modules</b></p>
+<p>Create a file called ’input.py’ with the following two lines below. Execute the program with ’python ./input.py’ and input the number '2' Next, run it again and input the letter 'd'.</p>
+<p></p>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#input.py</i></span><br/>
+<span class="footnotesize"><i>x = input("Enter a number: ")</i></span><br/>
+<span class="footnotesize"><i>print "The square of number is", x*x</i></span>
+</blockquote>
+<div class="Standard">
+Results when running ’python input.py’:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>Enter a number: 2 </i></span><br/>
+<span class="footnotesize"><i>The square of number is 4 </i></span>
+</blockquote>
+<div class="Standard">
+Again type ’python input.py’:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>Enter a number: d </i></span><br/>
+<span class="footnotesize"><i>Traceback (most recent call last): </i></span><br/>
+<span class="footnotesize"><i>File "input.py", line 1, in &lt;module&gt; </i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+x = input("Enter a number: ") </i></span><br/>
+<span class="footnotesize"><i>File "&lt;string&gt;", line 1, in &lt;module&gt; </i></span><br/>
+<span class="footnotesize"><i>NameError: name ’d’ is not defined </i></span>
+</blockquote>
+<div class="Standard">
+As you can see ’<b>d</b>’ is not defined and so it crashes! What if ’<b>d</b>’ was defined in the code? Create a new file with the following as save as ’input-hack.py’.
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#input-hack.py</i></span><br/>
+<span class="footnotesize"><i>d=5</i></span><br/>
+<span class="footnotesize"><i>x = input("Enter a number: ")</i></span><br/>
+<span class="footnotesize"><i>print "The square of number is ", x*x </i></span>
+</blockquote>
+<div class="Standard">
+When you run the program you can now enter any number, and when you enter the letter ’d’ it’s already defined and should return 25. The <a class="IndexReference" name="entry-input-0" href="#index-input">↓</a>’input()’ function is very dangerous, because it uses ’raw_input’ and converts the data to a number using <a class="IndexReference" name="entry-eval-0" href="#index-eval">↓</a>’eval()’. Run the program again and type 2+2. It should return 16.
+</div>
+<div class="Standard">
+If you change the code from ’x*x’ to ’x+x’, and run the script again with ’raw_input()’ like in the next example. The string of your choice will be duplicated twice. This is a warning to advise you not to use ’input()’ as it can create inconsistencies in the results as well as an opportunity to hack the code. 
+</div>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-3.1.2">3.1.2</a> <a class="IndexReference" name="entry-Input-raw-input-0" href="#index-Input-raw-input">↓</a>raw_input()
+</h3>
+<div class="Standard">
+Let’s create another file ’rawinput.py’ 
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#rawinput.py</i></span><br/>
+<span class="footnotesize"><i>x = raw_input("Enter a number or string: ")</i></span><br/>
+<span class="footnotesize"><i>print "you entered ", x </i></span>
+</blockquote>
+<div class="Standard">
+Please test the results and you will notice greater consistency. Further improvements can be made by reviewing the errors, substitute ’x’ with ’x*x’ and you will get an (<a class="IndexReference" name="entry-TypeError-0" href="#index-TypeError">↓</a>’TypeError’: can’t multiply sequence by non-int of type (’str’) when you enter a number.
+</div>
+<h4 class="Subsubsection">
+<a class="toc" name="toc-Subsubsection-3.1.2.1">3.1.2.1</a> Guess Program 
+</h4>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#guess.py</i></span><br/>
+<span class="footnotesize"><i>number = 10 </i></span><br/>
+<span class="footnotesize"><i>guess = int(raw_input(’Enter a number between 1 &amp; 20: ’))</i></span><br/>
+<span class="footnotesize"><i>if guess == number:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print ’Congrats! Correct number is’, number </i></span><br/>
+<span class="footnotesize"><i>elif guess &lt; number:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print ’No, try a little higher’ </i></span><br/>
+<span class="footnotesize"><i>else:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print ’No, try a little lower’</i></span>
+</blockquote>
+<div class="Standard">
+The guess program has ’raw_input’ wrapped to an integer called ’int’. So the string is converted to an integer after you enter the number and hit return. If you change the ’raw_input()’ to <b><i>guess = raw_input("Enter an integer between 1 and 20: ’)</i></b>. The ’if else’ statement will try to process the string, and default to the last else statement. 
+</div>
+<div class="Standard">
+You can wrap this code with a while statement as follows:
+</div>
+<blockquote class="Quotation">
+<i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+</i><br/>
+<span class="footnotesize"><i>#whileguess.py</i></span><br/>
+<span class="footnotesize"><i>number=10</i></span><br/>
+<span class="footnotesize"><i><a class="IndexReference" name="entry-while-1" href="#index-while">↓</a>while True:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+guess = int(raw_input(’Enter a number between 1 &amp; 20: ’))</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+if guess == number:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print ’Congrats! Correct number is’, number</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+break</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+elif guess &lt; number:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print ’No, try a little higher’</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+else:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print ’No, try a little lower’</i></span>
+</blockquote>
+<div class="Standard">
+Notice I added the break statement if the value is true it exits out of the loop. 
+</div>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-3.1.3">3.1.3</a> Declare a <a class="IndexReference" name="entry-Function-0" href="#index-Function">↓</a>Function
+</h3>
+<div class="Standard">
+The most common function to declare is a simple ’hello’ statement. 
+</div>
+<blockquote class="Quotation">
+<i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+</i><br/>
+<span class="footnotesize"><i>#hello.py</i></span><br/>
+<span class="footnotesize"><i>def hello():</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print "Hello"</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+return</i></span><br/>
+<span class="footnotesize"><i>hello()</i></span>
+</blockquote>
+<div class="Standard">
+You call the function with ’hello()’. A more practical function would be to
+</div>
+<div class="Standard">
+process the square of a number.
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>def square(x):</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+return x*x</i></span><br/>
+<span class="footnotesize"><i>print square(2) # call the function</i></span>
+</blockquote>
+<div class="Standard">
+You can expand this function with ’raw_input’.
+</div>
+<blockquote class="Quotation">
+<i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+</i><br/>
+<span class="footnotesize"><i>#inputfunction.py</i></span><br/>
+<span class="footnotesize"><i>def square(x):</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+return x*x</i></span><br/>
+<span class="footnotesize"><i>x = int(raw_input("Enter a number "))</i></span><br/>
+<span class="footnotesize"><i>print "input without function ",x</i></span><br/>
+<span class="footnotesize"><i>print "input with function ",square(2)</i></span>
+</blockquote>
+<div class="Standard">
+This is also a mild example of local vs global where the square is local to
+</div>
+<div class="Standard">
+the function. The input is global. 
+</div>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-3.1.4">3.1.4</a> <a class="IndexReference" name="entry-Function-Parameters-0" href="#index-Function-Parameters">↓</a>Functions with Parameters
+</h3>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#function with parameter</i></span><br/>
+<span class="footnotesize"><i>#functionpar.py</i></span><br/>
+<span class="footnotesize"><i>def areaSquare(a,b):</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+return a*b</i></span><br/>
+<span class="footnotesize"><i>print areaSquare(2,3)</i></span><br/>
+<span class="footnotesize"><i>z=4</i></span><br/>
+<span class="footnotesize"><i>y=2</i></span><br/>
+<span class="footnotesize"><i>print areaSquare(z,y)</i></span>
+</blockquote>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-3.1.5">3.1.5</a> Functions with <a class="IndexReference" name="entry-Function-Default-args-0" href="#index-Function-Default-args">↓</a>Default Arguments
+</h3>
+<div class="Standard">
+functions with default ’args’:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#functionarg.py</i></span><br/>
+<span class="footnotesize"><i>def tableLeaf(a,b=5):</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+return a*b</i></span><br/>
+<span class="footnotesize"><i>print tableLeaf(5,10)</i></span><br/>
+<span class="footnotesize"><i>print tableLeaf(5)</i></span>
+</blockquote>
+<div class="Standard">
+Here is another way to write this that might be easier for others to follow.
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#functionarg.py</i></span><br/>
+<span class="footnotesize"><i>def tableLeaf(a,b=5):</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print "area of table:", a*b</i></span><br/>
+<span class="footnotesize"><i>tableLeaf(5,10)</i></span><br/>
+<span class="footnotesize"><i>tableLeaf(5)</i></span>
+</blockquote>
+<div class="Standard">
+Another example with input.
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#functionarg-input.py</i></span><br/>
+<span class="footnotesize"><i>def tableLeaf(a,b=5):</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print "area of table:", a*b</i></span><br/>
+<span class="footnotesize"><i>x = int(raw_input("enter a number: "))</i></span><br/>
+<span class="footnotesize"><i>tableLeaf(x) </i></span>
+</blockquote>
+<div class="Standard">
+You can expand this by adding another ’raw_input’ and assign it to ’y’. Then call ’tableLeaf(x,y)’.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-3.2">3.2</a> Data <a class="IndexReference" name="entry-Structures-0" href="#index-Structures">↓</a>Structures
+</h2>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-3.2.1">3.2.1</a> <a class="IndexReference" name="entry-help-0" href="#index-help">↓</a>help(list) 
+</h3>
+<div class="Standard">
+The features for <a class="IndexReference" name="entry-Structures-list-0" href="#index-Structures-list">↓</a>list are extensive from counting items in the list to inserting, removing, appending and sorting. Roughly 50 attributes exist to manipulate a list. 
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#mylist.py</i></span><br/>
+<span class="footnotesize"><i>mylist = [’cpu’, ’monitor’, ’printer’, ’keyboard’, ’mouse’]</i></span><br/>
+<span class="footnotesize"><i>print ’mylist contains the following:’,</i></span><br/>
+<span class="footnotesize"><i>for i in mylist:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print i</i></span><br/>
+<span class="footnotesize"><i>print "I have",<a class="IndexReference" name="entry-len-0" href="#index-len">↓</a>len(mylist), ’items in mylist’</i></span><br/>
+<span class="footnotesize"><i>print "I am adding ink to mylist"</i></span><br/>
+<span class="footnotesize"><i>mylist.<a class="IndexReference" name="entry-append-0" href="#index-append">↓</a>append(’ink’)</i></span><br/>
+<span class="footnotesize"><i>print "mylist append: ",mylist</i></span><br/>
+<span class="footnotesize"><i>mylist.<a class="IndexReference" name="entry-sort-0" href="#index-sort">↓</a>sort()</i></span><br/>
+<span class="footnotesize"><i>print "mylist sorted: ",mylist</i></span><br/>
+<span class="footnotesize"><i>print "first item in mylist: ",mylist[0]</i></span><br/>
+<span class="footnotesize"><i>print "second item in mylist: ",mylist[1]</i></span><br/>
+<span class="footnotesize"><i>del mylist[1] </i></span><br/>
+<span class="footnotesize"><i>print "removed second item in mylist: ",mylist</i></span>
+</blockquote>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-3.2.2">3.2.2</a> help(tuple)
+</h3>
+<div class="Standard">
+<a class="IndexReference" name="entry-Structures-Tuples-0" href="#index-Structures-Tuples">↓</a>Tuples are similar to lists except they are <a class="IndexReference" name="entry-immutable-0" href="#index-immutable">↓</a>immutable like strings. You would use them when you are sure that they will not change. 
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#mytuple.py</i></span><br/>
+<span class="footnotesize"><i>mytuple = (’pen’, ’pencils’, ’paper’)</i></span><br/>
+<span class="footnotesize"><i>print ’mytuple contains: ’,mytuple</i></span><br/>
+<span class="footnotesize"><i>print ’I have’,len(mytuple), ’in mytuple’</i></span><br/>
+<span class="footnotesize"><i>drawer = (’ruler’, ’paperclips’, mytuple)</i></span><br/>
+<span class="footnotesize"><i>print ’mytuple and drawer contain: ’,drawer</i></span><br/>
+<span class="footnotesize"><i>print ’first item in first tuple is : ’,drawer[2][0]</i></span>
+</blockquote>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-3.2.3">3.2.3</a> Tuple in Print Statement
+</h3>
+<div class="Standard">
+The following attributes &ldquo;%s&rdquo; for string &ldquo;%d&rdquo; for integer, and &ldquo;%f&rdquo; float which defaults to 6 decimal places. 
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#tupleprint.py</i></span><br/>
+<span class="footnotesize"><i>book = "Wheel of Time Dragon Reborn"</i></span><br/>
+<span class="footnotesize"><i>cost = 45.9</i></span><br/>
+<span class="footnotesize"><i>print ’This %s book is %d’ % (book, cost)</i></span><br/>
+<span class="footnotesize"><i>print ’This %s book is %f’ % (book, cost)</i></span><br/>
+<span class="footnotesize"><i>print ’This %s book is %6.4f’ % (book, cost)</i></span><br/>
+<span class="footnotesize"><i>print ’This %s book is %6.2f’ % (book, cost)</i></span>
+</blockquote>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-3.2.4">3.2.4</a> <a class="IndexReference" name="entry-Structures-Dictionary-0" href="#index-Structures-Dictionary">↓</a>Dictionary
+</h3>
+<div class="Standard">
+help(’dict’)
+</div>
+<div class="Standard">
+A dictionary is like an address book. This example will use an <a class="IndexReference" name="entry-inventory-0" href="#index-inventory">↓</a>inventory system.
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#inventory.py</i></span><br/>
+<span class="footnotesize"><i>inv = {’monitors’: ’two’, ’printers’: 5, ’keyboards’:3}</i></span><br/>
+<span class="footnotesize"><i>print inv["printers"]</i></span><br/>
+<span class="footnotesize"><i>inv[’printers’] = 6</i></span><br/>
+<span class="footnotesize"><i>print inv[’printers’]</i></span><br/>
+<span class="footnotesize"><i>print inv</i></span><br/>
+<span class="footnotesize"><i>del inv[’keyboards’]</i></span><br/>
+<span class="footnotesize"><i>print inv</i></span><br/>
+<span class="footnotesize"><i>for i,j in inv.iteritems():</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print i, j</i></span>
+</blockquote>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-3.2.5">3.2.5</a> <a class="IndexReference" name="entry-Sequence-0" href="#index-Sequence">↓</a>Sequence
+</h3>
+<div class="Standard">
+The main feature of sequence is the ability to access the item in the index directly or to slice them. 
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#seq.py</i></span><br/>
+<span class="footnotesize"><i>x = ["monitor","keyboard","cpu","printer","mouse","paper",</i></span><br/>
+<span class="footnotesize"><i>"cables","laptops"]</i></span><br/>
+<span class="footnotesize"><i>print x[0]</i></span><br/>
+<span class="footnotesize"><i>print x[0:1]</i></span><br/>
+<span class="footnotesize"><i>print x[2:5] </i></span><br/>
+<span class="footnotesize"><i>print x[:4]</i></span><br/>
+<span class="footnotesize"><i>print x[4:]</i></span><br/>
+<span class="footnotesize"><i>print x[-4]</i></span>
+</blockquote>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-3.2.6">3.2.6</a> More on Strings
+</h3>
+<div class="Standard">
+Everything in python is an object especially a string. String is of the class ’str(object)’. 
+</div>
+<div class="Standard">
+Here are the most common features used:
+</div>
+<ul>
+<li>
+<a class="IndexReference" name="entry-Strings-find-0" href="#index-Strings-find">↓</a>find(...)
+</li>
+<li>
+<a class="IndexReference" name="entry-Strings-join-0" href="#index-Strings-join">↓</a>join(...)
+</li>
+<li>
+<a class="IndexReference" name="entry-Strings-split-0" href="#index-Strings-split">↓</a>split(...)
+</li>
+<li>
+<a class="IndexReference" name="entry-Strings-startswith-0" href="#index-Strings-startswith">↓</a>startswith(...)
+</li>
+
+</ul>
+<div class="Standard">
+basic string manupulation:
+</div>
+<div class="Standard">
+<b>Pay ATTENTION to indentation!</b>
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#string.py</i></span><br/>
+<span class="footnotesize"><i>mystring = "Learning Practical Python"</i></span><br/>
+<span class="footnotesize"><i>if ’earning’ in mystring:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print ’found earning’</i></span><br/>
+<span class="footnotesize"><i>else:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print ’did not find string pattern’</i></span><br/>
+<span class="footnotesize"><i>if mystring.startswith(’Learn’):</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print ’found Learn startswith’</i></span><br/>
+<span class="footnotesize"><i>if mystring.find(’earn’) != -1:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print ’found earn with find’</i></span><br/>
+<span class="footnotesize"><i>change = mystring.<a class="IndexReference" name="entry-split-0" href="#index-split">↓</a>split()</i></span><br/>
+<span class="footnotesize"><i>print change</i></span><br/>
+<span class="footnotesize"><i>delimit = ’;’</i></span><br/>
+<span class="footnotesize"><i>new = delimit.<a class="IndexReference" name="entry-join-0" href="#index-join">↓</a>join(change)</i></span><br/>
+<span class="footnotesize"><i>print new</i></span><br/>
+<span class="footnotesize"><i>comm = new.split(’;’)</i></span><br/>
+<span class="footnotesize"><i>print comm</i></span>
+</blockquote>
+<h2 class="Section">
+<a class="toc" name="toc-Section-3.3">3.3</a> <a class="IndexReference" name="entry-Modules-0" href="#index-Modules">↓</a>Modules
+</h2>
+<div class="Standard">
+Python comes with a large library of modules that can be used for all sorts of tasks from database programming, web programming, to graphics and games. A module is a file that contains functions and variables defined for reuse. One of the first modules used was the string module that has a series of functions designed to manipulate strings. To use the module you <a class="IndexReference" name="entry-import-0" href="#index-import">↓</a>import it as follows: 
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>import string</i></span>
+</blockquote>
+<div class="Standard">
+Of course string is a standard library. You can build and save functions in another file and load them using import. Make sure the file you import has a ’py’ extension. For example these two files:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#hellomodule.py</i></span><br/>
+<span class="footnotesize"><i>def hello():</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print "hello"</i></span>
+</blockquote>
+<div class="Standard">
+Create another file ’helloprog.py’ and add the following:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#helloprog.py</i></span><br/>
+<span class="footnotesize"><i>import hellomodule</i></span><br/>
+<span class="footnotesize"><i>hellomodule.hello()</i></span>
+</blockquote>
+<div class="Standard">
+Then run <b>’python ./helloprog.py’</b>
+</div>
+<div class="Standard">
+It should print out ’hello’ and it will also create a new file called ’hellomodule.pyc’: The ’.pyc’ is a byte compiled file. It pre-compiles the file that is imported for speed on repeat usage. This is useful because importing libraries can take time to load depending on the library and the resources of the computer you are using. 
+</div>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-3.3.1">3.3.1</a> <a class="IndexReference" name="entry-sys-0" href="#index-sys">↓</a>sys Module
+</h3>
+<div class="Standard">
+This is an important module that is used often when handling a list of arguments.
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i># arg1.py</i></span><br/>
+<span class="footnotesize"><i>import sys</i></span><br/>
+<span class="footnotesize"><i>print "script name", sys.argv[0]</i></span><br/>
+<span class="footnotesize"><i>#print "script arg", sys.argv[1]</i></span><br/>
+<span class="footnotesize"><i>#print "script arg list", sys.argv[1:]</i></span>
+</blockquote>
+<div class="Standard">
+First run the script as follows: <b><span class="footnotesize"><i>’python ./arg1.py’ </i></span></b>
+</div>
+<div class="Standard">
+Then uncomment out ’sys.argv[1]’ and run <b><span class="footnotesize">’<i>python ./arg1.py hello</i>’</span></b>
+</div>
+<div class="Standard">
+Uncomment the last ’sys.argv[1:]’ and run <b><span class="footnotesize">’<i>python ./arg1.py 1 d hello</i>’</span></b>
+</div>
+<div class="Standard">
+<b>output:</b>
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>script name arg1.py</i></span><br/>
+<span class="footnotesize"><i>script arg hello</i></span><br/>
+<span class="footnotesize"><i>script arg [’1’, ’a’, ’hello’]</i></span>
+</blockquote>
+<div class="Standard">
+So now you get the idea that the first field in the list is the script name itself. A loop can easily cycle through the list. 
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i># arg.py</i></span><br/>
+<span class="footnotesize"><i>import sys</i></span><br/>
+<span class="footnotesize"><i>for i in sys.argv:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print i</i></span>
+</blockquote>
+<div class="Standard">
+Now run it: <b><span class="footnotesize"><i>’python ./arg.py’</i></span></b><span class="default"> </span>
+</div>
+<div class="Standard">
+Watch it loop through the arguments in the list. You can control your list using an ’if’ statement. 
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i># arg2.py</i></span><br/>
+<span class="footnotesize"><i>import sys</i></span><br/>
+<span class="footnotesize"><i>if len(sys.argv) &gt; 1:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print "Number of arguments:", len(sys.argv)-1</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+for i in sys.argv[1:]:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print i</i></span><br/>
+<span class="footnotesize"><i>else:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print "no arguments..."</i></span>
+</blockquote>
+<div class="Standard">
+Run the following code above: <b><span class="footnotesize"><i>python ./arg2.py arg1 arg2 hello</i></span></b>
+</div>
+<div class="Standard">
+As you see it’s using a ’greater than 1’ operator. There is always at least one item in the list which is the file itself. You need to separate the file name from the arguments. To do this, you will need to use -1. 
+</div>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-3.3.2">3.3.2</a> Practical Usage: 
+</h3>
+<div class="Standard">
+Here is a practical example. <b>Pay ATTENTION to indentation!</b>
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i># square.py</i></span><br/>
+<span class="footnotesize"><i>import sys</i></span><br/>
+<span class="footnotesize"><i>def square(x):</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+return x*x</i></span><br/>
+<span class="footnotesize"><i>x = int(sys.argv[1])</i></span><br/>
+<span class="footnotesize"><i>print ’square is %g’ % square(x)</i></span>
+</blockquote>
+<div class="Standard">
+Run the program as follows: ’<b><span class="footnotesize"><i>python ./square.py 4</i></span></b><span class="default">’ and it should return 16. However if you run it without an argument it will error. To fix you can easily add the ’if’ statement below to the file above the function ’def square(x):’. No need to add the ’else’ label as it is already implicit. </span>
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#square1.py</i></span><br/>
+<span class="footnotesize"><i>import sys</i></span><br/>
+<span class="footnotesize"><i>def square(x):</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+return x*x</i></span><br/>
+<span class="footnotesize"><i>if len(sys.argv) !=2:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print ’Need an integer’</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+sys.exit(1)</i></span><br/>
+<span class="footnotesize"><i>x = int(sys.argv[1])</i></span><br/>
+<span class="footnotesize"><i>print ’square is %g’ % square(x)</i></span>
+</blockquote>
+<div class="Standard">
+Run the following:&rdquo;<b><span class="footnotesize"><i>python ./square1.py 4</i></span></b><span class="default">&rdquo; then run it again <i>&ldquo;<b></b></i></span><span class="footnotesize">python ./square1.py</span><span class="default">&rdquo;</span>
+</div>
+<div class="Standard">
+The ’if’ evaluates that an argument exists or not. If not equal (’!=)’ then exit. Remember that the first field in ’sys.argv[0]’ is the file itself. Should you choose to use more than one integer or a string, the script will error out. 
+</div>
+<div class="Standard">
+Using ’sys.argv’ can be very useful when you find yourself using another program or script to talk to your python applications. You would be surprised how often this happens in the real world. The goal here is that you can create programs that require arguments and if the user doesn’t enter an argument your code will catch it and print out a help statement that explains how to use the program. 
+</div>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-3.3.3">3.3.3</a> <a class="IndexReference" name="entry-from-0" href="#index-from">↓</a>from import
+</h3>
+<div class="Standard">
+You can use both options ’from import’ but note that it can make your code difficult to read. For example ’from sys import argv’ and you could use ’argv’ rather than ’sys.argv’. You can import all names in sys such as ’sys.exit, sys.path’ in one shot like: <b>’import sys *</b>’. This could also make executables larger if compiled on windows. If you are following a coding style like &ldquo;PEP 8&rdquo;, you will need to be specific and import only the modules you plan to use. 
+</div>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-3.3.4">3.3.4</a> Testing a Module
+</h3>
+<div class="Standard">
+Since all modules are objects, you can (and should) test them as you write. Make sure you use two underscores with no spaces between the underscores. For example: <b>Pay ATTENTION to indentation!</b>
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i># amodtest.py</i></span><br/>
+<span class="footnotesize"><i>if __name__ == ’__main__’:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print ’access directly’</i></span><br/>
+<span class="footnotesize"><i>else:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print ’from import’</i></span>
+</blockquote>
+<div class="Standard">
+Now run ’<b><span class="footnotesize"><i>python ./amodtest.py</i></span></b><span class="default">’.</span>
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>output: </i></span><br/>
+<span class="footnotesize"><i>access directly</i></span>
+</blockquote>
+<div class="Standard">
+Run interactive prompt and confirm you are in same directory as ’amodtest.py’.
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>&gt;&gt;&gt; import amodtest</i></span><br/>
+<span class="footnotesize"><i>from import</i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt;</i></span>
+</blockquote>
+<div class="Standard">
+As you can see when the file is imported, the ’else’ statement prints since it is not loaded directly. A more practical method would be:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i># fmodtest.py</i></span><br/>
+<span class="footnotesize"><i>def square(x):</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+return x*x</i></span><br/>
+<span class="footnotesize"><i>if __name__ == ’__main__’:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print "testing square(4) directly", square(4)</i></span>
+</blockquote>
+<div class="Standard">
+If you run it directly, it should print out 16. Next, let’s build another file and import it as follows:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i># testmodf.py</i></span><br/>
+<span class="footnotesize"><i>import fmodtest</i></span><br/>
+<span class="footnotesize"><i>print "from import square(16)", fmodtest.square(16)</i></span>
+</blockquote>
+<div class="Standard">
+Notice this will only print the modules function ’def square(x)’ from ’amodtest.py’ and nothing after.
+</div>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-3.3.5">3.3.5</a> Summary
+</h3>
+<div class="Standard">
+At this point you can build any algorithm you want. Having the ability to create your own functions gives you the power to create custom algorithms without importing additional libraries. 
+</div>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-3.3.6">3.3.6</a> Exercises
+</h3>
+<ol>
+<li>
+Go through the examples above using the interactive interpreter.
+</li>
+<li>
+Convert ’whileguess.py’ into a function and call it ’guess()’.
+</li>
+<li>
+Create a function to calculate Celsius and convert to Fahrenheit upon user input. Use a while loop to process the temperature until user enters ’x’ to exit.
+</li>
+<li>
+Using the following list (list="I will master strings"). Use a for loop to print the word ’master’.
+</li>
+
+</ol>

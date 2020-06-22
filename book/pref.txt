@@ -1,0 +1,100 @@
+<div class="Standard">
+Python is one of the few programming languages that is not only easy to learn but also very powerful. Most books on programming focus on the skill level of the reader rather then the topic for which the reader picked the book. I got the idea to write this book after reading ‘‘Programming - Principles and Practice Using C++ written by Bjarne Stroustrup the creator of C++ programming language. While everything here will be presented differently, the philosophy of programming, learning and the methods he presented is what influenced me the most. 
+</div>
+<div class="Standard">
+Programs by nature evolve towards complexity and most languages foster the ability to design in a structured way even if the language is not a structured programming language. Python supports multi-paradigms (such as object oriented, imperative, and functional). The design of Python leans towards a clean modular style with everything loosely considered an object. 
+</div>
+<div class="Standard">
+Once you start programming with python, you won’t want to use other languages. You may even find yourself converting code written in other languages to python. Python is very fast. You can compile your code into Byte-compiled files or PYC files. These pre-compiled binaries execute quickly. Conveniently Byte-compiled files that are created by the python interpreter automatically and can be further extended with other python modules. If you decide to use python for science, or gaming, and you need more speed, you can further extend python with the “C” language. The flexible features of python make it an excellent choice for beginners and experts. Most important, programming with python is fun. 
+</div>
+<div class="Standard">
+For the more experienced developer, python can be learned on a one page cheat sheet. Taking into account the range of skill levels and learning styles, my idea was to provide just enough examples to learn the language then introduce the reader to the fun tools. The reality is that the beginner will learn just enough to program then comb through endless &ldquo;Google&rdquo; pages to understand tasks such as: parsing large files, working with a database, doing network programming, creating a graphical interface, designing a website, developing a game, or modeling and stock market analysis. My goal is to teach the student just enough that they feel confident jumping right into the fun stuff. 
+</div>
+<div class="Standard">
+Here are some of the highlights:
+</div>
+<blockquote class="Quote">
+<b>EasyGUI</b>
+</blockquote>
+<blockquote class="Quotation">
+This is a wonderful chapter for newbies, providing you a graphical environment in which to program
+</blockquote>
+<blockquote class="Quote">
+<b>Tkinter</b>
+</blockquote>
+<blockquote class="Quotation">
+Now that the reader has cut their teeth on the basics of EasyGUI, it’s only a few more steps to writing Tkinter applications without EasyGUI templates. 
+</blockquote>
+<blockquote class="Quote">
+<b>WxWidgests</b>
+</blockquote>
+<blockquote class="Quotation">
+WxWidgets is one of the most popular cross platform GUI libraries available. It is used by a lot of popular high level programming languages. 
+</blockquote>
+<blockquote class="Quote">
+<b>Network Programming</b>
+</blockquote>
+<blockquote class="Quotation">
+This chapter explains how to use sockets, and build client and server applications.
+</blockquote>
+<blockquote class="Quote">
+<b>SQLite</b>
+</blockquote>
+<blockquote class="Quotation">
+Chapter 19. Is about SQlite, a very lightweight SQL server, that has many advantages over a traditional SQL server. It’s really easy to learn and easy for Python to connect to. 
+</blockquote>
+<blockquote class="Quote">
+<b>CGI </b>
+</blockquote>
+<blockquote class="Quotation">
+Often enough Web application developers run into certain limitations. The client might have a server co-located with a provider that only supports PHP and CGI. This chapter explains how to utilize python with CGI. 
+</blockquote>
+<blockquote class="Quote">
+<b>WSGI</b>
+</blockquote>
+<blockquote class="Quotation">
+Web Server Gateway Interface. It is a specification for web servers and application servers to communicate with web applications. 
+</blockquote>
+<blockquote class="Quote">
+<b>Pygame</b>
+</blockquote>
+<blockquote class="Quotation">
+This chapter is about the Pygame library, how to utilize it, a short tutorial, examples, and options for deployment. 
+</blockquote>
+<h3 class="Subsection-">
+<a class="toc" name="toc-Subsection--2"></a>How to use this book
+</h3>
+<div class="Standard">
+Learning python can be achieved relatively quickly in 6 chapters at the most. I explain everything in the simple terms and provide exercises. To get the most use out of this book it’s recommended that you type everything out. There is no substitute for learning how to deal with typos than the experience of troubleshooting your own code. 
+</div>
+<h3 class="Subsection-">
+<a class="toc" name="toc-Subsection--3"></a>Conventions 
+</h3>
+<div class="Standard">
+The python code snippets are italicized with a smaller font. Most of the results or corresponding output are provided in the same format. Some of the code might be truncated. Ellipses or comments similar to the following (#...) indicate regions where code exists that isn’t essential for expressing a point.
+</div>
+<h3 class="Subsection-">
+<a class="toc" name="toc-Subsection--4"></a>Code and Errata
+</h3>
+<div class="Standard">
+It’s useful to view examples in this book as whole programs without interleaved prose. You can find the source code for all code snippets in this book on our website: 
+</div>
+<div class="Standard">
+http://www.rapidpythonprogramming.com. 
+</div>
+<blockquote class="Quotation">
+<table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+
+</blockquote>
+<div class="Standard">
+Corrections for any errors found in the book can be found on the website. 
+</div>
+<div class="Standard">

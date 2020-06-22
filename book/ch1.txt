@@ -1,0 +1,495 @@
+<p><b>Introduction</b></p>
+<div class="Standard">
+The Python programming community is rapidly growing. More people are either migrating to python or choosing it as their first high level programming language. It’s multiple programming paradigms feature make it an easier first language to learn, because it frees you from focusing on the language itself, and more on problem solving. Python is highly portable for multiple operating systems, including embedded systems. It’s also ‘‘Open Source’’ and can be distributed freely. 
+</div>
+<div class="Standard">
+This book can be used for the experienced programmer, or absolute beginner. The complexity of the language gradually progresses, but the concepts will remain simple and easy to understand. Readers are not restricted to any previous specific concept. All concepts and examples can be easily modified and re-used. You will be able to play with the advanced features of python quickly. 
+</div>
+<div class="Standard">
+The job market is putting a higher demand for fast turnaround on development for new products. It’s also becoming a heavy hitter in the game market for its use throughout the game development cycle such as rendering, parsing, statistics and core development. Python can be easily extended using C/C++ for speed and performance. It’s used extensively in Academia for Science, Math, Engineering, simulations, and other computation experiments. Python’s greatest selling point is the vast libraries of pre-written tools. Below is a highlight of tools which comprises approximately 10% of what actually exists. 
+</div>
+<ul>
+<li>
+<b>Integrated Development Environments</b> - Boa Constructor, a cross-platform IDE for Python - EasyEclipse, an open source IDE for Python and other languages.
+</li>
+<li>
+<b>Applications</b> - BitTorrent original client, as well as other derivatives - Gajim, an Instant Message client - Resolver One, a spreadsheet.
+</li>
+<li>
+<b>Web Applications</b> - A feed Aggregator (Planet), a user-friendly Content Management System (Plone), a bug tracking system (Roundup).
+</li>
+<li>
+<b>Video games</b> - Civilization 4 uses python for most of its tasks, Eve &ldquo;online&rdquo; uses Stackless Python. PyGame has tons of games written in pure python. 
+</li>
+<li>
+<b>Web frameworks</b> - CherryPy an object-oriented web application server and framework, Django an MVC (Model, View, Controller) web framework, Zope is an application server commonly used to build content management systems.
+</li>
+<li>
+<b>Graphics frameworks</b> - Pygame has python bindings for Simple DirectMedia Layer (SDL), Pyglet is a cross-platform windowing and multimedia library for Python, PIL (Python Imaging Library) a module for working with images, Soya 3D is a high-level 3D game engine for Python.
+</li>
+<li>
+<b>GUI frameworks</b> - PyGTK is a popular cross-platform GUI library using GTK+, PyQt is another cross-platform GUI library using Qt, wxPython is a port of wxWidgets and a cross-platform GUI library for Python.
+</li>
+<li>
+<b>Scientific packages</b> - BioPython, a Python molecular biology suite. SciPy is a library of scientific and numerical routines.
+</li>
+<li>
+<b>Mathematical libraries</b> - matplotlib, an extension providing MATLAB-like plotting and mathematical functions. NumPy is a language extension that adds support for large and fast, multi-dimensional arrays and matrices.
+</li>
+<li>
+<b>Additional development packages</b> - Cheetah, a Python-powered template engine and code-generation tool, mod python is an Apache module allowing direct integration of Python scripts with the Apache web server, Twisted is a networking framework for Python 
+</li>
+<li>
+<b>Embedded as a scripting language</b> - GIMP- (Graphics Image Manipulation Program) , Blender, 3d graphics program , Inkscape is a Graphics program , Poser is a 3D rendering and animation software program that uses PoserPython tool-set. 
+</li>
+<li>
+<b>Commercial uses</b> - Google uses Python for many tasks including the Backends of web App’s, Maya is a professional 3D modeler, NASA is using Python to implement a CAD/CAE/PDM repository and model management, integration, and transformation system. 
+</li>
+<li>
+<b>Python implementations</b> - IronPython, Python for .NET and Mono platforms - Jython, Python coded in Java - Stackless Python, Python with co-routines.
+</li>
+
+</ul>
+<div class="Standard">
+What makes this book unique is the transition from beginner to intermediate programming. The transition will occur several times throughout the book, when introducing a new topic such as web applications and GUI. You will revisit beginning aspects of programming to simplify learning a new module, instead of assuming you are already proficient in the previous techniques discussed. Most importantly you will be instructed in the ability to convert code to other programming styles and technique; this will make it easy to adopt any style or method when re-using reusable code. Python also has an enhancement program known as PEP (Python Enhancement Program), which contains an index of potential proposals to further enhance the python programming language. Python is evolving towards 3.x which includes minor changes with regards to backwards compatibility. A chapter at the end of the book will be devoted to compatibility changes and migration. 
+</div>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-1.1.1">1.1.1</a> History
+</h3>
+<div class="Standard">
+Python was created in the late 1980s by Guido van Rossum at CWI in the Netherlands and was a successor to the ABC programming language. Python was re-designed to be a multi-paradigm programming language making it possible for programmers to adopt multiple styles of programming such as object-oriented programming, structured, functional, aspect-oriented programming and meta programming. 
+</div>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-1.1.2">1.1.2</a> Installation 
+</h3>
+<div class="Standard">
+It is highly recommended that you use Linux as your primary platform to learn and use python. However you are not restricted. Nearly everything can be done in Microsoft Windows™ or Apple Macintosh™ with few troubles. 
+</div>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-1.1.3">1.1.3</a> Windows
+</h3>
+<div class="Standard">
+Visit http://www.python.org/download and you will find an installer for windows. Select all installation components. 
+</div>
+<div class="Standard">
+If you wish to use Python in Microsoft Windows™ on the command line, then you need to set the PATH variable appropriately. 
+</div>
+<div class="Standard">
+For Windows™ 2000, XP, 2003, Vista, 2008, etc... click on Control Panel -&gt; System -&gt; Advanced -&gt; Environment variables. Click on the variable named PATH in the &ldquo;System Variables&rdquo; section, then select: 
+</div>
+<div class="Standard">
+Edit and add; C:\Python27 to the end of the line. 
+</div>
+<div class="Standard">
+Please choose proper directory name. For instance: it could be C:\Python2.7x 
+</div>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-1.1.4">1.1.4</a> Linux 
+</h3>
+<div class="Standard">
+Most Linux distributions come with Python installed by default. However you may need to install additional packages such as the documentation. For example, Knoppix or Debian run the following: 
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>sudo apt-get install python27-doc</i></span><span class="default"> </span>
+</blockquote>
+<div class="Standard">
+By selecting the defaults, you will have installed python core files including documentation, such as, interactive help and manual pages. 
+</div>
+<div class="Standard">
+You can verify the version of python via the command line using &ldquo;python –V&rdquo; as shown below.
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>$ <b>python –V </b></i></span><br/>
+<span class="footnotesize"><i>Python 2.7.9</i></span>
+</blockquote>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-1.1.5">1.1.5</a> Editors 
+</h3>
+<div class="Standard">
+Choosing an editor can be very crucial for the successful development of your scripts. You have to be completely comfortable with your editor and have full knowledge of how it writes files. For instance, scripts written on Microsoft Windows™ Notepad can have several issues when you port the files to a Linux or BSD operating system. Those files might have carriage return issues Control-M (^M) on each statement. You would have to manually remove them on each statement or do a file wide search and replace which can be tricky because you need an escape code to find it. The escape code is (x0D) or (\x0D). However you can avoid these issues by using a compatible editor. 
+</div>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-1.1.6">1.1.6</a> Case Sensitive 
+</h3>
+<div class="Standard">
+You might have noticed Microsoft Windows™ is not case sensitive. However, on a Unix variant operating system or Linux, you will need to be more specific when executing scripts. For example, typing &ldquo;python&rdquo; at the command prompt would list the following: 
+</div>
+<div class="Standard">
+Note: To exit out of the interpreter press "Ctrl-D" followed by enter or type &ldquo;exit()&rdquo;.
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>$ <b>python</b></i></span><br/>
+<span class="footnotesize"><i>Python 2.7.6 (default, Mar 22 2014, 22:59:56) </i></span><br/>
+<span class="footnotesize"><i>[GCC 4.8.2] on linux2</i></span><br/>
+<span class="footnotesize"><i>Type "help", "copyright", "credits" or "license" for more information. </i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt; </i></span>
+</blockquote>
+<blockquote class="Quote">
+Uppercase Python would reveal an error as follows:
+</blockquote>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>$ <b>Python</b> -bash: Python: command not found</i></span><span class="default"> </span>
+</blockquote>
+<div class="Standard">
+If you are using python in iOS, Apple accepts the uppercase &ldquo;Python&rdquo;, and you will not see an error.
+</div>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-1.1.7">1.1.7</a> Additional Packages
+</h3>
+<div class="Standard">
+You will learn how to download the following packages in later chapters as you need them:
+</div>
+<ul>
+<li>
+<b>python-doc</b> - Documentation for the high-level object-oriented-programming.
+</li>
+<li>
+<b>python-docutils</b> - Utilities for the documentation of Python.
+</li>
+<li>
+<b>python2.7-doc</b> - Documentation for the high-level object-oriented language.
+</li>
+<li>
+<b>python-django</b> - A high-level Python Web framework python-gtk2 - Python bindings for the GTK+ widget sets.
+</li>
+<li>
+<b>python-sqlite </b>- Python interface to SQLite 2 (currently included as of 2.6).
+</li>
+<li>
+<b>python-tk</b> - Tkinter - Writing Tk applications with Python python-pygame, and writing game applications using Python2.7x.
+</li>
+<li>
+<b>python-wxWidgets</b> – Writing Wx applications with Python.
+</li>
+<li>
+<b>zope3</b> – Web application framework.
+</li>
+
+</ul>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-1.1.8">1.1.8</a> Versions
+</h3>
+<div class="Standard">
+At the beginning of this project all applications were compiled using python version 2.7. Before completion of this project all applications were compiled and tested with Python version 2.8. The code will work in Python 3.x with minor changes such as: print statement. Almost everything here is backwards compatible and will translate easily into Python 3 if you familiarize yourself with the minor syntactical changes. Don’t let the version of python distract you. The changes are often very minor. See the two following examples below:
+</div>
+<ul>
+<li>
+Python 2.2x is: print variable. 
+</li>
+<li>
+Python 3.x is: print(variable)
+</li>
+
+</ul>
+<div class="Standard">
+* Please visit http://www.wiki.python.org/moin/Python2orPython3 
+</div>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-1.1.9">1.1.9</a> Installation and Configuration
+</h3>
+<div class="Standard">
+It is highly recommended that you choose an Operating System that you are proficient using. It is assumed that you have a clear understanding of your Operating System and how to execute programs via command line. 
+</div>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-1.1.10">1.1.10</a> Python Interactive Prompt
+</h3>
+<div class="Standard">
+For Microsoft Windows™users, Python interactive interpreter can be executed via the DOS prompt or through the <a class="IndexReference" name="entry-IDLE-Interactive-Development-Environment-0" href="#index-IDLE-Interactive-Development-Environment">↓</a>&ldquo;IDLE&rdquo;. (Interactive Development Environment) program.
+</div>
+<div class="Standard">
+To start the interactive interpreter enter "python" at the command or shell prompt in Windows or xterm in Linux or Terminal in iOS. 
+</div>
+<div class="Standard">
+The following information should appear:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>knoppix@Microknoppix:~$<b> python</b></i></span><br/>
+<span class="footnotesize"><i>Python 2.5.2 (r252:60911, Jan 4 2009, 17:40:26)[GCC 4.3.2] </i></span><br/>
+<span class="footnotesize"><i>on linux2 Type "help", "copyright", "credits" or "license"</i></span><br/>
+<span class="footnotesize"><i>for more information. </i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt; </i></span>
+</blockquote>
+<div class="Standard">
+<table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<div class="Standard">
+<p><br/>
+</p>
+
+</div>
+<div class="Standard">
+You can immediately begin typing your program
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>&gt;&gt;&gt;<b> print ’I am learning python’ </b></i></span><br/>
+<span class="footnotesize"><i>I am learning python </i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt;</i></span>
+</blockquote>
+<div class="Standard">
+<table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<div class="Standard">
+Please note that python is case sensitive. <i><u>P</u>rint</i> will give you an invalid syntax error.
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>&gt;&gt;&gt;<b> Print ’hello’ </b></i></span>
+</blockquote>
+<blockquote class="Quotation">
+<b><span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+</i></span></b>File "&lt;stdin&gt;", line 1 
+</blockquote>
+<ul>
+<li class="nested">
+<blockquote class="Quotation">
+<span class="footnotesize"><i>Print ’hello’ </i></span>
+</blockquote>
+<ul>
+<li class="nested">
+<blockquote class="Quotation">
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+ ^ </i></span>
+</blockquote>
+
+</li>
+
+</ul>
+
+</li>
+
+</ul>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>SyntaxError: invalid syntax </i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt; </i></span>
+</blockquote>
+<div class="Standard">
+<table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<div class="Standard">
+To exit out of the interpreter press "Ctrl-D" followed by enter or type &ldquo;exit()&rdquo;.
+</div>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-1.1.11">1.1.11</a> Making a Python Script
+</h3>
+<div class="Standard">
+You can create a script using an editor. If you are using Microsoft Windows™ I suggest you use IDLE or editpad to create your script. You may need to download editpad from: http://www.editpadpro.com. If you are using Linux, I suggest using <a class="IndexReference" name="entry-VIM-VI-IMproved-editor-0" href="#index-VIM-VI-IMproved-editor">↓</a>VIM as your editor or Sublime for iOS. Open your editor, create a new file and type the following into the editor:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>print ’I am learning python’</i></span>
+</blockquote>
+<div class="Standard">
+Save the file as first.py 
+</div>
+<div class="Standard">
+Once the file is saved you can type the following on the command line or terminal:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>knoppix@Microknoppix:~$<b> python first.py </b></i></span><br/>
+<span class="footnotesize"><i>I am learning python </i></span><br/>
+<span class="footnotesize"><i>knoppix@Microknoppix:~$</i></span>
+</blockquote>
+<div class="Standard">
+<table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<div class="Standard">
+A proper script would include the path to the interpreter, a description, the name of the file and other files that might be involved. The path to the interpreter is not needed while using python on a windows™ operating system.
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#!/usr/bin/python </i></span><br/>
+<span class="footnotesize"><i># program name first.py </i></span><br/>
+<span class="footnotesize"><i>print ’I am learning python’</i></span>
+</blockquote>
+<div class="Standard">
+<table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<div class="Standard">
+Edit the file with the information in the figure above, then Save and Close the file. If you are on a Linux system, you will need to change the file permissions to make it an executable program. 
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>knoppix@Microknoppix:~$<b> chmod a+x fist.py</b></i></span>
+</blockquote>
+<div class="Standard">
+<table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<div class="Standard">
+You can then execute the program as follows:
+</div>
+<blockquote class="Quotation">
+<i>k<span class="footnotesize">noppix@Microknoppix:~$<b> ./first.py </b></span></i><br/>
+<span class="footnotesize"><i>I am learning python </i></span><br/>
+<span class="footnotesize"><i>knoppix@Microknoppix:~$</i></span>
+</blockquote>
+<div class="Standard">
+Notice the #! hash or number symbol and exclamation. It’s known in Unix or Linux as &ldquo;explode&rdquo; and &ldquo;bang&rdquo; or &ldquo;sha-bang&rdquo; which is the key to execute the shell or interpreter. Anything after the first line is considered either code or comments. Comments are designated using the hash (#) symbol. On Windows™ the path to the Python interpreter will be, for example, c:\python27.x\python.exe. You can also omit (#!) on first line. 
+</div>
+<div class="Standard">
+Python’s built-in interpreter also has a nice interactive feature known as help(). To start the interactive interpreter enter "python" at the command or shell prompt: 
+</div>
+<blockquote class="Quotation">
+<span class="scriptsize"><i>knoppix@Microknoppix:~$ python </i></span><br/>
+<span class="scriptsize"><i>Python 2.5.2 (r252:60911, Jan 4 2009, 17:40:26) [GCC 4.3.2] on </i></span><br/>
+<span class="scriptsize"><i>linux2 Type "help", "copyright", "credits" or "license" </i></span><br/>
+<span class="scriptsize"><i>for more information. </i></span><br/>
+<span class="scriptsize"><i>&gt;&gt;&gt; help()</i></span><br/>
+<span class="scriptsize"><i>Welcome to Python 2.7! This is the online help utility.</i></span><br/>
+<span class="scriptsize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+</i></span><br/>
+<span class="scriptsize"><i>If this is your first time using Python, you should definitely </i></span><br/>
+<span class="scriptsize"><i>check out the tutorial on the Internet at </i></span><br/>
+<span class="scriptsize"><i>http://www.python.org/doc/tut/.</i></span><br/>
+<span class="scriptsize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+</i></span><br/>
+<span class="scriptsize"><i>Enter the name of any module, keyword, or topic to get help on </i></span><br/>
+<span class="scriptsize"><i>writing Python programs and using Python modules. To quit </i></span><br/>
+<span class="scriptsize"><i>this help utility and return to the interpreter, just type "quit".</i></span><br/>
+<span class="scriptsize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+</i></span><br/>
+<span class="scriptsize"><i>To get a list of available modules, keywords, or topics, type </i></span><br/>
+<span class="scriptsize"><i>"modules", "keywords", or "topics". Each module also comes </i></span><br/>
+<span class="scriptsize"><i>with a one-line summary of what it does; to list the modules </i></span><br/>
+<span class="scriptsize"><i>whose summaries contain a given word such as "spam", type </i></span><br/>
+<span class="scriptsize"><i>"modules spam".</i></span><br/>
+<span class="scriptsize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+</i></span><br/>
+<span class="scriptsize"><i>help&gt; </i></span>
+</blockquote>
+<div class="Standard">
+To exit out of help mode type ’<b>q</b>’ and it will put you back into the interpreter mode &gt;&gt;&gt;. With this interactive help you can learn about almost anything in Python, for example:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>&gt;&gt;&gt;<b> help(’str’)</b></i></span>
+</blockquote>
+<div class="Standard">
+Will print out the documentation for &ldquo;str&rdquo; or string.
+</div>
+<div class="Standard">
+To get a list of modules, or keywords, type <i>’<b>modules</b></i>’. It will take a minute to compile but will provide a list of modules. If you wish to learn about a specific module, pick one of the two formats shown below. 
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>&gt;&gt;&gt;<b> help(’module-name’) or </b></i></span><br/>
+<span class="footnotesize"><i>help&gt;<b> module-name.</b></i></span>
+</blockquote>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-1.1.12">1.1.12</a> Summary
+</h3>
+<div class="Standard">
+In this chapter you have learned how to use the interactive interpreter, how to create and execute scripts, and how to activate the interactive help module. 
+</div>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-1.1.13">1.1.13</a> Exercises
+</h3>
+<ol>
+<li>
+Go through the examples above using the interactive interpreter.
+</li>
+<li>
+Create a script to print out a list of all modules and redirect that list to a file called &ldquo;python-modules.txt&rdquo;.
+</li>
+<li>
+Create another script to print the print module and redirect to file called &ldquo;python-print.txt&rdquo;.
+</li>
+</ol>

@@ -1,3 +1,10 @@
 from django.contrib import admin
+from basicapp.models import Traffic
 
-# Register your models here.
+
+class TrafficAdmin(admin.ModelAdmin):
+	list_display = ["ip", "created"]
+
+
+admin.site.register(Traffic, TrafficAdmin)
+

@@ -9,13 +9,15 @@
 
 <p></p>
 
-<ul>
 {% for bpost in object_list %}
-<li><p>Title: {{ bpost.title }}<br>Slug: {{ bpost.slug }}
-<br><a href="/blog/{{ bpost.id }}/">Body</a></li>
+<p><a href="/blog/{{ bpost.id }}/"><u><b style="font-size:large;">{{ bpost.title }}</a></u></b>
+<br>{{ bpost.created }}
+<br>Author: {{ bpost.author }}
+<br>{{ bpost.body|safe|truncatechars:250 }}
+&nbsp;<a href="/blog/{{ bpost.id }}/">read more</a></p>
+<p></p>
 {% empty %}
         <li>No articles yet.</li>
 {% endfor %}
-</ul>
 
 {% endblock %}
