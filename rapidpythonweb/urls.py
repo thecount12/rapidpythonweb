@@ -30,6 +30,7 @@ urlpatterns = [
     path('thanks/', signup.views.thanks),
     path('blog/', include('blog.urls')),
     path('book/', include('book.urls')),
+    path('captcha', include('captcha.urls')),
 
     path('admin/', admin.site.urls),
     path('pages/', include('django.contrib.flatpages.urls')),
