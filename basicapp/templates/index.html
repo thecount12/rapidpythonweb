@@ -1,7 +1,85 @@
-
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
-<h2>Body Content</h2>
-<p>Here is your basic page. Above you have Navigation bar, Jumbotron in the Header which contains 
-'Hello, world!',<br> and additional space for marketing.</p> 
+<h1>You can learn to program using Python</h1>
+<p><b> - No experience necessary to begin learning to writing programs using python. -</b> </p> 
+<p>'Rapid Python Programming' will take you from  
+from absolute beginner to being able to write basic Python in a very short time.</p> 
+<p></p>
+<h2>Basics</h2>
+<p>This tutorial will teach you the basics of Python in <b><u>10</u> minutes</b>. Consider this a cheatsheet to get up to speed
+quickly with Python.</p>
+
+<p>Obviously, if you really want to learn a language you need to program in that language for a while. <a href="/pages/book/">My book</a>
+will help you with that.
+
+Chances are python might already be installed if you run Linux or Apple. If you run windows you can <b>download 
+at <a href="http://www.python.org/downloads/">python.org</a></b>.
+
+After you have downloaded and installed python. You can acces the python via the "command prompt" or "terminal".
+</p>
+<p>When you type '<b>python</b>' in the terminal you will see the following 'greater than' symbols in the screen.
+</p>
+<p style="background-color:black;color:white;">>>></p>
+
+<p>This is known as the '<b>interpreter</b>', and you can begin writing python code.
+</p>
+<p>To exit out of this scree type quit()</p>
+
+<p style="background-color:black;color:white;">>>>quit()</p>
+
+<h2>Getting Help</h2>
+
+<p style="background-color:black;color:white;">>>>help(3)
+<br>Help on int object:<br>
+<br>
+class int(object)<br>
+<br>...
+<br>..
+<br>.
+<br>(etc)</p>
+
+<p>If you want detail about how an object works. All you need to do is type 'help(<object name>)'. You can get a list of all objects with 'dir()'. 
+
+<h2>Variable and String</h2>
+
+<p style="background-color:black;color:white;">
+<br>>>>myvar=40
+<br>>>>myvar+=2
+<br>>>>myvar
+<br>42
+<br>>>>mystring="Hello"
+<br>>>>mystring += " world."
+<br>>>>print(mystring)
+<br>Hello world.
+<br>
+<br># This is a comment
+<br>"""multiline
+<br>comment"""</p>
+
+
+
+<h2>Data types</h2>
+<p style="background-color:black;color:white;">
+<br>>>> mydata = [1, ["list1", "list2"], ("my", "tuple")]
+<br>>>> mylist = ["List item 1", 2, 9.99]
+<br>>>> mylist[0] = "New list" # change first field
+<br>>>> mylist
+<br>['New list',2,9.99]
+<br>>>> mylist[-1] = 10 # Here, we refer to the last item.
+<br>>>> mylist
+<br>['New list',2,10]
+<br>>>> mydict = {"Key": "Val", 1: 20, "pi": 3.14}
+<br>>>> mydict["pi"] = 3.15 # change dictionary
+<br>>>> mydict
+<br>{1: 20, 'pi': 3.15, 'Key': 'Val'}
+<br>>>> mytuple = (1, 2, 3)
+<br>>>> myfunction = len
+<br>>>> print(myfunction(mylist))
+<br>3
+
+<p>
+If you find this interesting. The first part of the book is free <a href="/pages/home/">here online</a>
+</p>
+
 {% endblock %}

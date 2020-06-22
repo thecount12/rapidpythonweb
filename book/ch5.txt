@@ -1,0 +1,723 @@
+<link rel="stylesheet" href="/static/lyx.css" type="text/css" media="all"/>
+<p><b>Exceptions</b></p>
+<div class="Standard">
+</div>
+<div class="Standard">
+There is no doubt whatsoever that you have already watched your programs crash. Every time the crash occurs it prints out the all too familiar message Traceback (most recent call last):" followed by your File ’name.py’ a line number and some additional information telling you why the program crashed. The bottom line is that checking for <a class="IndexReference" name="entry-errors-0" href="#index-errors">↓</a>errors is tedious and boring. However, you must master the basics of this section before moving forward in your software development career. Please note that exceptions are not the absolute answer to preventing your programs from crashing. Code can be very complex and some problems just can’t be predicted. Lets see an example and crash a program:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#!/usr/bin/python</i></span><br/>
+<span class="footnotesize"><i>#tro.py</i></span><br/>
+<span class="footnotesize"><i>x=int(raw_input("Enter a number: "))</i></span><br/>
+<span class="footnotesize"><i>print x</i></span>
+</blockquote>
+<div class="Standard">
+Run the program using any letter such as ’a’ and you will get the following results:
+</div>
+<div class="Standard">
+<b>Pay ATTENTION to indentation!</b>
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>Enter a number: a</i></span><br/>
+<span class="footnotesize"><i><a class="IndexReference" name="entry-Exceptions-Traceback-0" href="#index-Exceptions-Traceback">↓</a>Traceback (most recent call last):</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+File "./tro.py", line 3, in &lt;module&gt;</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+x=int(raw_input("Enter a number: "))</i></span><br/>
+<span class="footnotesize"><i>ValueError: invalid literal for int() with base 10: ’a’</i></span>
+</blockquote>
+<div class="Standard">
+The error is a <a class="IndexReference" name="entry-Exceptions-ValueError-0" href="#index-Exceptions-ValueError">↓</a>ValueError. The ’raw_input’ is wrapped with ’int()’. This line expected an integer and you substituted an integer with a letter. To guide the user to enter the correct type of data, we rewrite ’tro.py’ with the following information.
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#!/usr/bin/python</i></span><br/>
+<span class="footnotesize"><i>#tro1.py</i></span><br/>
+<span class="footnotesize"><i>try:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+x=int(raw_input("Enter a number: "))</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print x</i></span><br/>
+<span class="footnotesize"><i>except ValueError:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print "You did not enter a number"</i></span>
+</blockquote>
+<div class="Standard">
+Another way to write it:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#!/usr/bin/python</i></span><br/>
+<span class="footnotesize"><i>#tro2.py</i></span><br/>
+<span class="footnotesize"><i>try:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+x=int(raw_input("Enter a number: "))</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print x</i></span><br/>
+<span class="footnotesize"><i><a class="IndexReference" name="entry-Exceptions-except-0" href="#index-Exceptions-except">↓</a>except:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print "You did not enter a number"</i></span>
+</blockquote>
+<div class="Standard">
+This would be considered a <a class="IndexReference" name="entry-catch-all-0" href="#index-catch-all">↓</a>catch all for <a class="IndexReference" name="entry-multiple-exceptions-0" href="#index-multiple-exceptions">↓</a>multiple exceptions. However, this is not good programming practice. It’s recommended that you understand the different types of exceptions that could occur. It’s very easy to have multiple exceptions for a routine block of code. For example:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#!/usr/bin/python</i></span><br/>
+<span class="footnotesize"><i>#try3.py</i></span><br/>
+<span class="footnotesize"><i>try:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+x=int(raw_input("Enter a number: "))</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print x</i></span><br/>
+<span class="footnotesize"><i>except EOFError: print "why did you exit early"</i></span><br/>
+<span class="footnotesize"><i>except ValueError:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print "You did not enter a number"</i></span>
+</blockquote>
+<div class="Standard">
+Run this program (Do not enter a number or letter) then type ’Ctrl-d’ to exit the program. . When you exit early, you hit the EOF error or ’End Of File’. <a class="IndexReference" name="entry-EOFError’-0" href="#index-EOFError’">↓</a>.
+</div>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-5.1.1">5.1.1</a> <a class="IndexReference" name="entry-Exceptions-Raise-0" href="#index-Exceptions-Raise">↓</a>Raise Exception
+</h3>
+<div class="Standard">
+There are cases in which you want to your program to operate as intended and still raise an exception when needed. You can create your own exceptions and raise them yourself. The following demonstrates how to raise your own exceptions. Don’t forget to ’import sys’ package.
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#!/usr/bin/python</i></span><br/>
+<span class="footnotesize"><i>#raise.py</i></span><br/>
+<span class="footnotesize"><i>import sys</i></span><br/>
+<span class="footnotesize"><i>def letserror():</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+raise RuntimeError(’Force the error’)</i></span><br/>
+<span class="footnotesize"><i>def main():</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+letserror()</i></span><br/>
+<span class="footnotesize"><i>main()</i></span>
+</blockquote>
+<div class="Standard">
+Results (the line numbers could be a little different):
+</div>
+<div class="Standard">
+<b>Pay ATTENTION to indentation!</b>
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>Traceback (most recent call last):</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+File "raise.py", line 7, in &lt;module&gt;</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+main()</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+File "raise.py", line 6, in main</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+letserror()</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+File "raise.py", line 4, in letserror</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+raise RuntimeError(’Force the error’)</i></span><br/>
+<span class="footnotesize"><i><a class="IndexReference" name="entry-Exceptions-RuntimeError-0" href="#index-Exceptions-RuntimeError">↓</a>RuntimeError: Force the error</i></span>
+</blockquote>
+<div class="Standard">
+However this does not look so clean. Below is a slight modification:
+</div>
+<div class="Standard">
+<b>Pay ATTENTION to indentation!</b>
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#!/usr/bin/python</i></span><br/>
+<span class="footnotesize"><i>#raise2.py</i></span><br/>
+<span class="footnotesize"><i>import sys</i></span><br/>
+<span class="footnotesize"><i>def letserror():</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+raise RuntimeError(’Force the error’)</i></span><br/>
+<span class="footnotesize"><i>def main(num):</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+try:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+letserror()</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+except Exception, err:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+sys.stderr.write(str(err))</i></span><br/>
+<span class="footnotesize"><i>main(0)</i></span>
+</blockquote>
+<div class="Standard">
+<table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<div class="Standard">
+You do have quite a bit control in how you print your error messages out. For example you could replace ’sys.stderr.write’ with the following: <b><a class="IndexReference" name="entry-sys.stderr-0" href="#index-sys.stderr">↓</a></b>&rdquo;sys.stderr.write("%s\n" % str(err))&rdquo;. The object ’sys.stderr’ is part of the Unix standard input, output and error pipe. Let’s put this into action. Here is a more practical example: 
+</div>
+<div class="Standard">
+<b>Pay ATTENTION to indentation!</b>
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#!/usr/bin/python</i></span><br/>
+<span class="footnotesize"><i>#raise3.py</i></span><br/>
+<span class="footnotesize"><i>import sys</i></span><br/>
+<span class="footnotesize"><i>def letserror():</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+raise RuntimeError(’Force the error’)</i></span><br/>
+<span class="footnotesize"><i>def main(num):</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+try:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+if num &lt; 3:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+letserror()</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+else:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+blah=num*num</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print "my number is", blah</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+except Exception, err:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+sys.stderr.write("%s your number %s is less than 3\n" % (str(err),num))</i></span><br/>
+<span class="footnotesize"><i>main(2)</i></span>
+</blockquote>
+<div class="Standard">
+If you change ’main(2)’ to ’3’ it will square your number, however if it’s less than ’3’ or (&lt; 3), the error will raise and you can give the user a detailed explanation.
+</div>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-5.1.2">5.1.2</a> Finally 
+</h3>
+<div class="Standard">
+The <a class="IndexReference" name="entry-Exceptions-finally-0" href="#index-Exceptions-finally">↓</a>finally stanza is guaranteed to run even if the try block raises an exception. This makes it ideal for cleanup or ’close()’. For example:
+</div>
+<div class="Standard">
+<b>Pay ATTENTION to indentation!</b>
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#!/usr/bin/python</i></span><br/>
+<span class="footnotesize"><i>#raise4.py</i></span><br/>
+<span class="footnotesize"><i>import sys</i></span><br/>
+<span class="footnotesize"><i>def letserror():</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+raise RuntimeError(’Force the error’)</i></span><br/>
+<span class="footnotesize"><i>def main(num):</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+try:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+if num &lt; 3:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+letserror()</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+else:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+blah=num*num</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print "my number is", blah</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+except Exception, err:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+sys.stderr.write("%s your num %s less than 3\n" % (str(err),num))</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+finally:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print "okay I could close the file or end this etc..."</i></span><br/>
+<span class="footnotesize"><i>main(2)</i></span>
+</blockquote>
+<div class="Standard">
+You will notice that the finally stanza runs if an error is raised or not.
+</div>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-5.1.3">5.1.3</a> Best Practice 
+</h3>
+<div class="Standard">
+Plenty of examples have been listed above. At the very least, the base exception class ’Exception(Base Exception)’ should be utilized as a default solution for handling multiple cases. Try it with a letter, number, or no data, and ’ctrl-z’.
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>try:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+x=int(raw_input(&ldquo;Enter a number: &ldquo;))</i></span><br/>
+<span class="footnotesize"><i>exception Exception, e:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print e</i></span>
+</blockquote>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-5.1.4">5.1.4</a> Ignore <a class="IndexReference" name="entry-Exceptions-)-0" href="#index-Exceptions-)">↓</a>Exception
+</h3>
+<div class="Standard">
+Add ’pass’ which is a null operation.
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>try:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+x=int(raw_input(&ldquo;Enter a number: &ldquo;))</i></span><br/>
+<span class="footnotesize"><i>exception Exception, e:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+pass</i></span>
+</blockquote>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-5.1.5">5.1.5</a> Summary
+</h3>
+<div class="Standard">
+Make every effort to master exception handling because it will save you when troubleshooting code and more than likely improve the quality of your software development. No exercises are required in this section because you should continue the practice of implementing exception handling moving forward. 
+</div>

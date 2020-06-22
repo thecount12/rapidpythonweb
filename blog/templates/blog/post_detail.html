@@ -6,9 +6,9 @@
 <p><b>Title:{{ post.title }}</b></p>
 <p>Slug:{{ post.slug}}</p>
 <p>Author:<u> {{ post.author}}</u>
-<br>Date:{{ post.created}}</p>
+<br>Date:{{ post.publishdate }}</p>
 <p></p>
-<p>{{ post.body}}</p>
+<p>{{ post.body|safe }}</p>
 
 <h2>Comments:</h2>
 

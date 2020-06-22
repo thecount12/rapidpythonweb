@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2><u>Free Chapters Online</u></h2>
+
+<ul>
+{% for bbook in object_list %}
+<h2>{{ bbook.chapter}}</h2>
+<br>
+{{ bbook.body|safe|truncatechars:250 }}
+<p><a href="/book/{{ bbook.id }}/">Read More</a></p>
+{% empty %}
+        <li>No articles yet.</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

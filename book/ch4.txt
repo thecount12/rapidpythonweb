@@ -1,0 +1,1159 @@
+<link rel="stylesheet" href="/static/lyx.css" type="text/css" media="all"/>
+<p><b>Files</b></p>
+<div class="Standard">
+Working with files made simple.
+</div>
+<p>The Basics</p>
+<div class="Standard">
+simple <a class="IndexReference" name="entry-File-open-0" href="#index-File-open">↓</a>open example:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>&gt;&gt;&gt; blah=open("data.txt", ’w’)</i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt; blah.write("I am learning python\nI love python\nPython is great")</i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt; blah.close()</i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt; </i></span>
+</blockquote>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-4.1.2">4.1.2</a> Variations of <a class="IndexReference" name="entry-File-Reading-0" href="#index-File-Reading">↓</a>Reading Data
+</h3>
+<div class="Standard">
+File ’data.txt’ contains the following:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>I am learning python</i></span><br/>
+<span class="footnotesize"><i>I love python </i></span><br/>
+<span class="footnotesize"><i>Python is great</i></span>
+</blockquote>
+<div class="Standard">
+’file1.py’ contains the following:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#!/usr/bin/python</i></span><br/>
+<span class="footnotesize"><i># file1.py</i></span><br/>
+<span class="footnotesize"><i>blah = open("data.txt", "r")</i></span><br/>
+<span class="footnotesize"><i>print blah.readlines()</i></span><br/>
+<span class="footnotesize"><i>blah.close()</i></span>
+</blockquote>
+<div class="Standard">
+Results: 
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>[’I am learning python\n’, ’I love python\n’, ’python is great\n’, ’\n’]</i></span>
+</blockquote>
+<div class="Standard">
+Let’s make changes to ’file2.py’ with the following:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#!/usr/bin/python</i></span><br/>
+<span class="footnotesize"><i># file2.py</i></span><br/>
+<span class="footnotesize"><i>blah = open("data.txt", "r")</i></span><br/>
+<span class="footnotesize"><i>list = blah.readline()</i></span><br/>
+<span class="footnotesize"><i>for i in list:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print i</i></span><br/>
+<span class="footnotesize"><i>blah.close()</i></span>
+</blockquote>
+<div class="Standard">
+results:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>I</i></span><br/>
+<span class="footnotesize"><i>a</i></span><br/>
+<span class="footnotesize"><i>m</i></span><br/>
+<span class="footnotesize"><i>l</i></span><br/>
+<span class="footnotesize"><i>e</i></span><br/>
+<span class="footnotesize"><i>a</i></span><br/>
+<span class="footnotesize"><i>r</i></span><br/>
+<span class="footnotesize"><i>n</i></span>
+</blockquote>
+<blockquote class="Quotation">
+<b><span class="footnotesize"><i>...</i></span></b>
+</blockquote>
+<div class="Standard">
+Here is something to remember: ’list = blah.<a class="IndexReference" name="entry-read-0" href="#index-read">↓</a>read()’ does the same except output is on separate lines. Try it out with the script above and review the differences.
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#!/usr/bin/python</i></span><br/>
+<span class="footnotesize"><i># file2.py</i></span><br/>
+<span class="footnotesize"><i>blah = open("data.txt", "r")</i></span><br/>
+<span class="footnotesize"><i>list = blah.readlines()</i></span><br/>
+<span class="footnotesize"><i>for i in list:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print i</i></span><br/>
+<span class="footnotesize"><i>blah.close()</i></span>
+</blockquote>
+<div class="Standard">
+results:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>I am learning python</i></span><br/>
+<span class="footnotesize"><i>I love python</i></span><br/>
+<span class="footnotesize"><i>python is great</i></span>
+</blockquote>
+<div class="Standard">
+Adjust ’file3.py’ again:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#!/usr/bin/python</i></span><br/>
+<span class="footnotesize"><i># file3.py</i></span><br/>
+<span class="footnotesize"><i>blah = open("data.txt", "r")</i></span><br/>
+<span class="footnotesize"><i>blah.seek(5)</i></span><br/>
+<span class="footnotesize"><i>print blah.readline()</i></span><br/>
+<span class="footnotesize"><i>blah.close()</i></span>
+</blockquote>
+<div class="Standard">
+results:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>learning python</i></span>
+</blockquote>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-4.1.3">4.1.3</a> <a class="IndexReference" name="entry-Parsing-0" href="#index-Parsing">↓</a>Parsing a file
+</h3>
+<div class="Standard">
+In the previous chapters you learned to parse strings on a very limited bases. This section will provide a more detailed example on how to parse information in a very simple way. <b>Pay ATTENTION to indentation!</b>
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#!/usr/bin/python </i></span><br/>
+<span class="footnotesize"><i># parse.py</i></span><br/>
+<span class="footnotesize"><i>blah = open("data.txt", "r") </i></span><br/>
+<span class="footnotesize"><i>list=blah.readlines() </i></span><br/>
+<span class="footnotesize"><i>for i in list: </i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+if ’love’ in i: </i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+new=i</i></span><br/>
+<span class="footnotesize"><i>print "print specific line ’love’ in file" </i></span><br/>
+<span class="footnotesize"><i>print new</i></span><br/>
+<span class="footnotesize"><i>change=new.split() </i></span><br/>
+<span class="footnotesize"><i>print "print specific list in file as a list" </i></span><br/>
+<span class="footnotesize"><i>print change </i></span><br/>
+<span class="footnotesize"><i>print "print specific field in list ’love’" </i></span><br/>
+<span class="footnotesize"><i>print change[1]</i></span><br/>
+<span class="footnotesize"><i>for i in change: </i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+if ’python’ in i: </i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+wow=i</i></span><br/>
+<span class="footnotesize"><i>print "search for specific field in list ’python’ to print wow"</i></span><br/>
+<span class="footnotesize"><i>blah.close() </i></span>
+</blockquote>
+<div class="Standard">
+Results:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>print specific line ’love’ in file </i></span><br/>
+<span class="footnotesize"><i>I love python</i></span><br/>
+<span class="footnotesize"><i>print specific list in file as a list </i></span><br/>
+<span class="footnotesize"><i>[’I’, ’love’, ’python’] </i></span><br/>
+<span class="footnotesize"><i>print specific field in list ’love’ </i></span><br/>
+<span class="footnotesize"><i>love </i></span><br/>
+<span class="footnotesize"><i>search for specific field in list ’python’ to print </i></span><br/>
+<span class="footnotesize"><i>python </i></span>
+</blockquote>
+<div class="Standard">
+The above example demonstrates the ability to only print a specific instance on a specific line of a file even if there might be more than one instance of the word ’python’ in the file. 
+</div>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-4.1.4">4.1.4</a> <a class="IndexReference" name="entry-Binary-0" href="#index-Binary">↓</a>Binary Files
+</h3>
+<div class="Standard">
+simple open binary file: 
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>&gt;&gt;&gt; blahbin = open ( ’binary.txt’, ’wb’ )</i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt; blahbin.write ( ’write binary data.’ )</i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt; blahbin.close()</i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt;</i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt; blahbin = open ( ’binary.txt’, ’rb’ )</i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt; print blahbin.read()</i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt; blahbin.close()</i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt;</i></span>
+</blockquote>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-4.1.5">4.1.5</a> <a class="IndexReference" name="entry-Pickle-0" href="#index-Pickle">↓</a>Pickle
+</h3>
+<div class="Standard">
+help(’pickle’)
+</div>
+<div class="Standard">
+Now that we can read and write string, what about lists, tuples, and dictionaries?
+</div>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-4.1.6">4.1.6</a> Let’s Pickle
+</h3>
+<div class="Standard">
+’Pickle’ is used with databases and a few other python frameworks to assist with persistent data manipulation.
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#!/usr/bin/python</i></span><br/>
+<span class="footnotesize"><i>#apickle.py</i></span><br/>
+<span class="footnotesize"><i>import pickle</i></span><br/>
+<span class="footnotesize"><i>filePickle = open ( ’pickleFile.txt’, ’w’ )</i></span><br/>
+<span class="footnotesize"><i>list = [ ’I’, ’love’, ’python’, 1,2,3, ’ok’ ]</i></span><br/>
+<span class="footnotesize"><i>list2 = { ’firstname’: ’john’, ’lastname’: ’doe’, 1: ’one’} </i></span><br/>
+<span class="footnotesize"><i>pickle.dump ( list, filePickle)</i></span><br/>
+<span class="footnotesize"><i>pickle.dump ( list2, filePickle)</i></span><br/>
+<span class="footnotesize"><i>filePickle.close()</i></span>
+</blockquote>
+<div class="Standard">
+Now look at the contents of the ’pickleFile.txt’. Open it up and take a look inside the file with your editor:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>(lp0 </i></span><br/>
+<span class="footnotesize"><i>S’I’ </i></span><br/>
+<span class="footnotesize"><i>p1 </i></span><br/>
+<span class="footnotesize"><i>aS’love’</i></span><br/>
+<span class="footnotesize"><i>p2 </i></span><br/>
+<span class="footnotesize"><i>aS’python’ </i></span><br/>
+<span class="footnotesize"><i>p3 </i></span><br/>
+<span class="footnotesize"><i>aI1 </i></span><br/>
+<span class="footnotesize"><i>aI2 </i></span><br/>
+<span class="footnotesize"><i>aI3 </i></span><br/>
+<span class="footnotesize"><i>aS’ok’ </i></span><br/>
+<span class="footnotesize"><i>...</i></span>
+</blockquote>
+<div class="Standard">
+Create ’lpickle.py’ and add the following:<b> Pay ATTENTION to indentation!</b>
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#!/usr/bin/python</i></span><br/>
+<span class="footnotesize"><i>#lpickle.py</i></span><br/>
+<span class="footnotesize"><i>import pickle</i></span><br/>
+<span class="footnotesize"><i>filePickle = open ( ’pickleFile.txt’ )</i></span><br/>
+<span class="footnotesize"><i>list = pickle.load ( filePickle)</i></span><br/>
+<span class="footnotesize"><i>list # used while in idle screen</i></span><br/>
+<span class="footnotesize"><i>for i in list:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print i</i></span><br/>
+<span class="footnotesize"><i>dict = pickle.load (filePickle)</i></span><br/>
+<span class="footnotesize"><i>dict # used while in idle screen</i></span><br/>
+<span class="footnotesize"><i>for i in dict:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print i</i></span><br/>
+<span class="footnotesize"><i>dict[’firstname’]</i></span><br/>
+<span class="footnotesize"><i>for i, j in dict.iteritems():</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print i, j</i></span><br/>
+<span class="footnotesize"><i>filePickle.close()</i></span>
+</blockquote>
+<div class="Standard">
+results:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>I</i></span><br/>
+<span class="footnotesize"><i>love</i></span><br/>
+<span class="footnotesize"><i>python</i></span><br/>
+<span class="footnotesize"><i>1</i></span><br/>
+<span class="footnotesize"><i>2</i></span><br/>
+<span class="footnotesize"><i>3</i></span><br/>
+<span class="footnotesize"><i>ok</i></span><br/>
+<span class="footnotesize"><i>...</i></span>
+</blockquote>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-4.1.7">4.1.7</a> <a class="IndexReference" name="entry-cPickle-0" href="#index-cPickle">↓</a>cPickle
+</h3>
+<div class="Standard">
+A faster version of pickle is ’cPickle’ which is a ’C’ compiled version of pickle. This can be easily imported as follows:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>import cPickle as pickle</i></span>
+</blockquote>
+<div class="Standard">
+Here is an example its essentially the same but while using idle you get a different effect using ’test1’ or ’print test1’:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>&gt;&gt;&gt;import cPickle as pickle</i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt; </i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt; test1 = (’I love python’, 1, [1, 2, 3] )</i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt; test1</i></span><br/>
+<span class="footnotesize"><i>(’I love python’, 1, [1, 2, 3])</i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt; </i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt; part1 = pickle.dumps(test1)</i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt; part1</i></span><br/>
+<span class="footnotesize"><i>"(S’I love python’\nI1\n(lp1\nI1\naI2\naI3\natp2\n."</i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt; </i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt; print part1</i></span><br/>
+<span class="footnotesize"><i>(S’I love python’</i></span><br/>
+<span class="footnotesize"><i>I1</i></span><br/>
+<span class="footnotesize"><i>(lp1</i></span><br/>
+<span class="footnotesize"><i>I1</i></span><br/>
+<span class="footnotesize"><i>aI2</i></span><br/>
+<span class="footnotesize"><i>aI3</i></span><br/>
+<span class="footnotesize"><i>atp2</i></span><br/>
+<span class="footnotesize"><i>.</i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt; </i></span>
+</blockquote>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-4.1.8">4.1.8</a> Python <a class="IndexReference" name="entry-with-0" href="#index-with">↓</a>with Statement
+</h3>
+<div class="Standard">
+Using the ’with’ statement cuts down on exception handling for file stream by avoiding the need for ’try/finally’ blocks of code. According to python documentation, the ’with’ statement clarifies code previously by ’try...finally’ blocks to ensure clean-up code is executed. Syntax is as follows:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>with expression [as variable]: with-block</i></span>
+</blockquote>
+<div class="Standard">
+The expression is evaluated, and it should result in an object that supports the context management protocol ’__enter__()’ and ’__exit__()’ methods. 
+</div>
+<div class="Standard">
+Let’s write data to a file:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>with open(’output.txt’, ’w’) as f:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+f.write(&ldquo;Usual Hello World!&rdquo;)</i></span>
+</blockquote>
+<div class="Standard">
+The above ’with’ statement will automatically close the file after nested block of code.
+</div>
+<h4 class="Subsubsection">
+<a class="toc" name="toc-Subsubsection-4.1.8.1">4.1.8.1</a> File Handling Modes
+</h4>
+<div class="Standard">
+<div class="float">
+<a class="Label" name="Table-4.1"> </a><div class="table">
+<div class="caption">
+Table 4.1 <a class="IndexReference" name="entry-File-modes-0" href="#index-File-modes">↓</a>File Modes
+</div>
+<table>
+<tr>
+<td align="center" valign="top">
+<span class="footnotesize">Modes</span>
+</td>
+<td align="center" valign="top">
+<span class="footnotesize">Description</span>
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+<span class="footnotesize">r</span>
+</td>
+<td align="center" valign="top">
+<span class="footnotesize">Opens file for reading only</span>
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+<span class="footnotesize">rb</span>
+</td>
+<td align="center" valign="top">
+<span class="footnotesize">Opens file for reading binary only</span>
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+<span class="footnotesize">r+</span>
+</td>
+<td align="center" valign="top">
+<span class="footnotesize">Opens file for both reading and writing</span>
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+<span class="footnotesize">rb+</span>
+</td>
+<td align="center" valign="top">
+<span class="footnotesize">Opens binary file for reading and writing</span>
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+<span class="footnotesize">w</span>
+</td>
+<td align="center" valign="top">
+<span class="footnotesize">Opens file for writing only</span>
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+<span class="footnotesize">wb</span>
+</td>
+<td align="center" valign="top">
+<span class="footnotesize">Opens binary file for writing only</span>
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+<span class="footnotesize">a</span>
+</td>
+<td align="center" valign="top">
+<span class="footnotesize">Opens a file for appending</span>
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+<span class="footnotesize">ab</span>
+</td>
+<td align="center" valign="top">
+<span class="footnotesize">Opens a binary file for appending</span>
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+<span class="footnotesize">a+</span>
+</td>
+<td align="center" valign="top">
+<span class="footnotesize">Opens a file for both appending and reading</span>
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+<span class="footnotesize">ab+</span>
+</td>
+<td align="center" valign="top">
+<span class="footnotesize">Opens a file for both appending and reading in binary</span>
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+<h4 class="Subsubsection">
+<a class="toc" name="toc-Subsubsection-4.1.8.2">4.1.8.2</a> File A<a class="IndexReference" name="entry-File-Attributes-0" href="#index-File-Attributes">↓</a>ttributes
+</h4>
+<div class="Standard">
+<div class="float">
+<a class="Label" name="Table-4.2"> </a><div class="table">
+<div class="caption">
+Table 4.2 File Attributes
+</div>
+<table>
+<tr>
+<td align="center" valign="top">
+<span class="footnotesize">Attribute</span>
+</td>
+<td align="center" valign="top">
+<span class="footnotesize">Description</span>
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+<span class="footnotesize">file.closed</span>
+</td>
+<td align="center" valign="top">
+<span class="footnotesize">Returns true if closed</span>
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+<span class="footnotesize">file.mode</span>
+</td>
+<td align="center" valign="top">
+<span class="footnotesize">Returns access mode of opened file</span>
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+<span class="footnotesize">file.name</span>
+</td>
+<td align="center" valign="top">
+<span class="footnotesize">Returns the name of the file</span>
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+<span class="scriptsize">file.softspace</span>
+</td>
+<td align="center" valign="top">
+<span class="scriptsize">Returns false if space explicitly required with print, otherwise true.</span>
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+<div class="Standard">
+<table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<div class="Standard">
+Example below:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#!/usr/bin/python</i></span><br/>
+<span class="footnotesize"><i>#filetest.py</i></span><br/>
+<span class="footnotesize"><i>f = open("dat.txt", "wb") </i></span><br/>
+<span class="footnotesize"><i>print "Name the file: ", f.name </i></span><br/>
+<span class="footnotesize"><i>print "Closed or open: ", f.closed </i></span><br/>
+<span class="footnotesize"><i>print "mode: ", f.mode </i></span><br/>
+<span class="footnotesize"><i>print "Softspace: ", f.softspace</i></span>
+</blockquote>
+<div class="Standard">
+Also note you did not need ’dat.txt’ to run this script. 
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>Results:</i></span><br/>
+<span class="footnotesize"><i>Name the file: dat.txt </i></span><br/>
+<span class="footnotesize"><i>Closed or open: False </i></span><br/>
+<span class="footnotesize"><i>mode: wb </i></span><br/>
+<span class="footnotesize"><i>Softspace: 0 </i></span>
+</blockquote>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-4.1.9">4.1.9</a> Deep Binary Manipulation
+</h3>
+<div class="Standard">
+Python has a limitation when working with binary files. The smallest unit you can work with is a byte. This can prove challenging when working with a data stream. Working with binary is beyond scope in this book and requires a firm foundation in computer software
+</div>
+<div class="Standard">
+But you can use <a class="IndexReference" name="entry-Binary-bitwise-0" href="#index-Binary-bitwise">↓</a>bitwise operators to evaluate if a value is True or False. For example:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>&gt;&gt;&gt; x=3 </i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt; x&amp;1!=0 </i></span><br/>
+<span class="footnotesize"><i>True </i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt; x&amp;2!=0 </i></span><br/>
+<span class="footnotesize"><i>True </i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt; x&amp;3!=0 </i></span><br/>
+<span class="footnotesize"><i>True </i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt; x&amp;4!=0 </i></span><br/>
+<span class="footnotesize"><i>False </i></span>
+</blockquote>
+<h4 class="Subsubsection">
+<a class="toc" name="toc-Subsubsection-4.1.9.1">4.1.9.1</a> bit string manipulation
+</h4>
+<div class="Standard">
+This example converts string to binary using <a class="IndexReference" name="entry-base2-0" href="#index-base2">↓</a>base2
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>&gt;&gt;&gt;print int(’001101’,2)</i></span><br/>
+<span class="footnotesize">13</span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt;print int(’0000011001’,2)</i></span><br/>
+<span class="footnotesize"><i>25</i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt;print &ldquo;0x%x&rdquo; % int(’0011001’,2)</i></span><br/>
+<span class="footnotesize"><i>0x25</i></span>
+</blockquote>
+<div class="Standard">
+Please note you didn’t need to use 8 bits. My example above has 7 bits. However it took 1001 for the first value of 9 in the 1’s place and the next 001 for 10’s place making 19. 
+</div>
+<div class="Standard">
+Conversion to Character requires an 8 bit maximum string.
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>&gt;&gt;&gt; print chr(int(’1111001’,2)) </i></span><br/>
+<span class="footnotesize"><i>y</i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt; print chr(int(’1111011’,2)) </i></span><br/>
+<span class="footnotesize"><i>{</i></span>
+</blockquote>
+<div class="Standard">
+Conversion of characters to integers.
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>&gt;&gt;&gt; print int(’1111011’,2) </i></span><br/>
+<span class="footnotesize"><i>123 </i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt; ord(’{’) </i></span><br/>
+<span class="footnotesize"><i>123</i></span>
+</blockquote>
+<div class="Standard">
+Another way to convert individual bits.
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>&gt;&gt;&gt; 1&lt;&lt;0 </i></span><br/>
+<span class="footnotesize"><i>1 </i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt; 1&lt;&lt;1</i></span><br/>
+<span class="footnotesize"><i>2 </i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt; 1&lt;&lt;3 </i></span><br/>
+<span class="footnotesize"><i>8 </i></span>
+</blockquote>
+<div class="Standard">
+Conversion of <a class="IndexReference" name="entry-Hex-0" href="#index-Hex">↓</a>Hex string to Integer 
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>&gt;&gt;&gt; int(’0xff’,16) </i></span><br/>
+<span class="footnotesize"><i>255</i></span>
+</blockquote>
+<div class="Standard">
+python 3 supports <a class="IndexReference" name="entry-Binary-literal-0" href="#index-Binary-literal">↓</a>binary literal by adding b’01011’ before the string to denote binary string.
+</div>
+<div class="Standard">
+The following is an example of bin(),oct(),and hex() conversion
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>&gt;&gt;&gt; x=123 </i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt; bin(x) </i></span><br/>
+<span class="footnotesize"><i>’0b1111011’ </i></span>
+</blockquote>
+<div class="Standard">
+Notice the literal ’b’ encoded in the string representation. Literal data types are available in python3.0 or by importing future library
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>&gt;&gt;&gt; oct(x) </i></span><br/>
+<span class="footnotesize"><i>’0173’ </i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt; hex(x)</i></span><br/>
+<span class="footnotesize"><i>’0x7b’</i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt; format(x,’b’) </i></span><br/>
+<span class="footnotesize"><i>’1111011’ </i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt; format(x,’o’) </i></span><br/>
+<span class="footnotesize"><i>’173’ </i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt; format(x,’x’) </i></span><br/>
+<span class="footnotesize"><i>’7b’ </i></span>
+</blockquote>
+<div class="Standard">
+As you can see above ’int()’ object handles a lot. <b><span class="footnotesize"><i>help(’int’)</i></span></b>
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>class int(object) </i></span><br/>
+<span class="footnotesize"><i>| int(x=0) -&gt; int or long</i></span><br/>
+<span class="footnotesize"><i>| int(x, base=10) -&gt; int or long </i></span><br/>
+<span class="footnotesize"><i>| </i></span><br/>
+<span class="footnotesize"><i>| Convert a number or string to an integer, or return 0 if no arguments </i></span><br/>
+<span class="footnotesize"><i>| are given. If x is floating point, the conversion truncates towards zero. </i></span><br/>
+<span class="footnotesize"><i>| If x is outside the integer range, the function returns a long instead.</i></span><br/>
+<span class="footnotesize"><i>| </i></span><br/>
+<span class="footnotesize"><i>| If x is not a number or if base is given, then x must be a string or </i></span><br/>
+<span class="footnotesize"><i>| Unicode object representing an integer literal in the given base. The </i></span><br/>
+<span class="footnotesize"><i>| literal can be preceded by ’+’ or ’-’ and be surrounded by whitespace.</i></span><br/>
+<span class="footnotesize"><i>| The base defaults to 10. Valid bases are 0 and 2-36. Base 0 means to </i></span><br/>
+<span class="footnotesize"><i>| interpret the base from the string as an integer literal. </i></span><br/>
+<span class="footnotesize"><i>| &gt;&gt;&gt; int(’0b100’, base=0) </i></span><br/>
+<span class="footnotesize"><i>| 4</i></span>
+</blockquote>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-4.1.10">4.1.10</a> Binary <a class="IndexReference" name="entry-Struct-0" href="#index-Struct">↓</a>Struct
+</h3>
+<div class="Standard">
+The structure of ’struct’ to pack and unpack. <a class="IndexReference" name="entry-pack-0" href="#index-pack">↓</a>pack() and <a class="IndexReference" name="entry-unpack-0" href="#index-unpack">↓</a>unpack() require a string to define how binary data is structured. 
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#mystruct.py</i></span><br/>
+<span class="footnotesize"><i>import struct</i></span><br/>
+<span class="footnotesize"><i># i represents integer</i></span><br/>
+<span class="footnotesize"><i># c represents character </i></span><br/>
+<span class="footnotesize"><i>bdata=struct.pack("icc", 42,b’A’, b’Z’) </i></span><br/>
+<span class="footnotesize"><i>print(bdata)</i></span><br/>
+<span class="footnotesize"><i># unpack yields a tuple of data </i></span><br/>
+<span class="footnotesize"><i>tdata=struct.unpack("icc",bdata) </i></span><br/>
+<span class="footnotesize"><i>print(tdata) </i></span>
+</blockquote>
+<div class="Standard">
+Results:
+</div>
+<div class="Standard">
+*AZ 
+</div>
+<div class="Standard">
+(42, ’A’, ’Z’) 
+</div>
+<div class="Standard">
+The struct module performs conversions between Python values and ’C’ struct’s represented as a Python string. <a class="IndexReference" name="entry-Struct-Pack-0" href="#index-Struct-Pack">↓</a>Pack and <a class="IndexReference" name="entry-Struct-Unpack-0" href="#index-Struct-Unpack">↓</a>Unpack require <a class="IndexReference" name="entry-character-formats-0" href="#index-character-formats">↓</a>character formats to determine structure:
+</div>
+<div class="Standard">
+<table>
+<tr>
+<td align="center" valign="top">
+Format
+</td>
+<td align="center" valign="top">
+Type
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+x
+</td>
+<td align="center" valign="top">
+no values
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+c
+</td>
+<td align="center" valign="top">
+char
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+b
+</td>
+<td align="center" valign="top">
+signed int
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+B
+</td>
+<td align="center" valign="top">
+unsigned int
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+?
+</td>
+<td align="center" valign="top">
+bool
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+h
+</td>
+<td align="center" valign="top">
+int short
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+H
+</td>
+<td align="center" valign="top">
+unsigned short
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+i
+</td>
+<td align="center" valign="top">
+int
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+I
+</td>
+<td align="center" valign="top">
+unsigned int
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+l
+</td>
+<td align="center" valign="top">
+long
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+L
+</td>
+<td align="center" valign="top">
+unsigned long
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+q
+</td>
+<td align="center" valign="top">
+long long
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+Q
+</td>
+<td align="center" valign="top">
+unsigned long long
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+f
+</td>
+<td align="center" valign="top">
+float
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+d
+</td>
+<td align="center" valign="top">
+double
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+s
+</td>
+<td align="center" valign="top">
+char[]
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+p
+</td>
+<td align="center" valign="top">
+char[]
+</td>
+
+</tr>
+<tr>
+<td align="center" valign="top">
+P
+</td>
+<td align="center" valign="top">
+void *
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<div class="Standard">
+Below is an example of reading parsing a jpeg file and extracting size
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#readjpg.py</i></span><br/>
+<span class="footnotesize"><i>import sys </i></span><br/>
+<span class="footnotesize"><i>import <a class="IndexReference" name="entry-Binary-binascii-0" href="#index-Binary-binascii">↓</a>binascii </i></span><br/>
+<span class="footnotesize"><i>import struct</i></span><br/>
+<span class="footnotesize"><i>signature=[ </i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+binascii.unhexlify(b’FFD8FFD8’), </i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+binascii.unhexlify(b’FFD8FFE0’), </i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+binascii.unhexlify(b’FFD8FFE1’) ]</i></span><br/>
+<span class="footnotesize"><i>with open(sys.argv[1],’rb’) as file:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+first_four_bytes=file.read(4)</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+if first_four_bytes in signature: </i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print("JPEG found.") </i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+else: print("This is not a JPEG file.") </i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print first_four_bytes </i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print binascii.hexlify(first_four_bytes) </i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+second=file.read(1) </i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+while (ord(second) !=0xDA): </i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+while (ord(second) !=0xFF): second=file.read(1) </i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+while (ord(second) ==0xFF): second=file.read(1) </i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+if (ord(second) &gt;=0xC0 and ord(second) &lt;=0xC3): </i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print binascii.hexlify(file.read(3)) </i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print struct.unpack(’&gt;HH’,file.read(4)) </i></span>
+</blockquote>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-4.1.11">4.1.11</a> Summary 
+</h3>
+<div class="Standard">
+At this point, you have the ability to program just about anything using a structured top down method. Python works best as a higher level programming language and is not a practical language to work at a low level with large binary data. The binary example in this section will only be used as a reference and will not be discussed or used later in this book due to the complexity.
+</div>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-4.1.12">4.1.12</a> Exercises
+</h3>
+<ul>
+<li>
+Write two files. A library function to open and parse your file searching for the quantity of python in the sample file below. Create another file to import that library and print out lines (3-6), and replace every instance of keyword ’python’. 
+</li>
+
+</ul>
+<div class="Standard">
+Sample file: 
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize">I love python </span><br/>
+<span class="footnotesize">I will master python </span><br/>
+<span class="footnotesize">python is the greatest </span><br/>
+<span class="footnotesize">python pays big money </span><br/>
+<span class="footnotesize">python will set you free </span><br/>
+<span class="footnotesize">I will make a python script </span><br/>
+<span class="footnotesize">python will be my future </span><br/>
+<span class="footnotesize">All my programs will be replaced with python </span><br/>
+<span class="footnotesize">only python </span><br/>
+<span class="footnotesize">python python</span>
+</blockquote>

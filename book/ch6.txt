@@ -1,0 +1,1032 @@
+<link rel="stylesheet" href="/static/lyx.css" type="text/css" media="all"/>
+<p><b>OOP - </b></p>
+Object Oriented Programming  </b></p>
+<p>
+So far you have been creating programs in a procedural way using functions and blocks of statements. With a slight twist you can wrap your functions into an object, and advance to understanding the concept of the object oriented programming paradigm. Without realizing it, you have already been using certain aspects of object oriented programming but in a procedural way.
+</p>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-6.1.2">6.1.2</a> <a class="IndexReference" name="entry-OOP-Objects-0" href="#index-OOP-Objects">↓</a>Objects
+</h3>
+<div class="Standard">
+By now, you are familiar with features such as strings, integers, dictionaries, and functions. These are all objects. The string object has methods which provide additional ways to manipulate the string. Using the ’<a class="IndexReference" name="entry-’dot-syntax-0" href="#index-’dot-syntax">↓</a>dot syntax’ you can access the objects attributes such as &ldquo;string A.<a class="IndexReference" name="entry-lower()-0" href="#index-lower()">↓</a>lower()&rdquo;. So from the beginning we have been accessing the methods of each of our objects. You can also create new instance of the object known as <a class="IndexReference" name="entry-instantiation-0" href="#index-instantiation">↓</a>instantiation. In essence they are ’datatypes’ and can be tested with a built in function ’type’.
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>&gt;&gt;&gt; dat=’a string’</i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt; print <a class="IndexReference" name="entry-type()-0" href="#index-type()">↓</a>type(’dat’)</i></span><br/>
+<span class="footnotesize"><i>&lt;type ’str’&gt;</i></span>
+</blockquote>
+<div class="Standard">
+<table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<div class="Standard">
+The ’dot syntax’ would apply easily. Checking your ’type’, you find it to be a class string object or ’str(object)’. Here is an example of a class object easily tested using ’type’. Don’t forget you will still need to indent your text after the class statement. Reminder: There are no spaces between the underscore symbols.<b> Finally as always, pay ATTENTION to indentation!</b>
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>&gt;&gt;&gt; class orphan():</i></span><br/>
+<span class="footnotesize"><i>... <table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+<table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+def __init__(self):</i></span><br/>
+<span class="footnotesize"><i>... <table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+self.arg1=arg1 </i></span><br/>
+<span class="footnotesize"><i>... </i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt; print type(orphan)</i></span><br/>
+<span class="footnotesize"><i>&lt;type ’classobj’&gt;</i></span><br/>
+<span class="footnotesize"><i>&gt;&gt;&gt; </i></span>
+</blockquote>
+<div class="Standard">
+<table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<div class="Standard">
+Objects store data by using variables that belong to the object. The variables belong to the object or class as fields. Functions work the same, they are called methods of a class. So basically fields and methods are attributes of a class.
+</div>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-6.1.3">6.1.3</a> <a class="IndexReference" name="entry-OOP-Self-0" href="#index-OOP-Self">↓</a>Self and <a class="IndexReference" name="entry-OOP-Class-0" href="#index-OOP-Class">↓</a>Class 
+</h3>
+<div class="Standard">
+A class is created by using the keyword ’<a class="IndexReference" name="entry-’class’-0" href="#index-’class’">↓</a>class’ like &ldquo;class orphan():&rdquo;. What makes this different from a function or (method) is the name <a class="IndexReference" name="entry-specifier-0" href="#index-specifier">↓</a>specifier of <a class="IndexReference" name="entry-self-0" href="#index-self">↓</a>’self’. The value of ’self’ is the name itself which refers to the object itself. Think of ’self’ like a pointer in C++. If you have a class called ’blahClass’ and an instance of the class called ’blahObj’. You call the method of the object like ’blahObj.method(arg1)’, python will convert it as &ldquo;BlahClass.method(blahObj,arg1)&rdquo;. Even if you have a method with no arguments, you still have to define a method with the self argument. Here is a practical example:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#classhello.py</i></span><br/>
+<span class="footnotesize"><i>class hello: </i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+def blah(self):</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print "Hello world, again"</i></span><br/>
+<span class="footnotesize"><i>a=hello() # pointer location in memory</i></span><br/>
+<span class="footnotesize"><i>a.blah() # print method of class</i></span><br/>
+<span class="footnotesize"><i>hello().blah() # another way to access the class</i></span>
+</blockquote>
+<div class="Standard">
+<table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+<div class="Standard">
+As you can see self exists and it takes no parameters. 
+</div>
+<div class="Standard">
+Results:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>Hello world, again </i></span><br/>
+<span class="footnotesize"><i>Hello world, again </i></span>
+</blockquote>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-6.1.4">6.1.4</a> __init__
+</h3>
+<div class="Standard">
+The <a class="IndexReference" name="entry-OOP-constructor-0" href="#index-OOP-constructor">↓</a>’__init__’ method initializes as soon as the object is instantiated. We don’t call the method ’__init__’ (our constructor). We merely pass it arguments. For example:
+</div>
+<div class="Standard">
+<b>Pay ATTENTION to indentation!</b>
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#classinit.py</i></span><br/>
+<span class="footnotesize"><i>class hello:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+def __init__(self,name):</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+self.name=name</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+def blah(self):</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print "Hello world, my name is",self.name</i></span><br/>
+<span class="footnotesize"><i>a=hello(’William’)</i></span><br/>
+<span class="footnotesize"><i>a.blah()</i></span>
+</blockquote>
+<div class="Standard">
+Results:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>Hello world, my name is William </i></span>
+</blockquote>
+<div class="Standard">
+Now pass more arguments:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#name.py</i></span><br/>
+<span class="footnotesize"><i>class hello:</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+def __init__(self,l,f):</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+self.last=l</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+self.first=f</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+def blah(self):</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print "My first name is", self.first</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print "My last name is", self.last</i></span><br/>
+<span class="footnotesize"><i>a=hello(’Doe’, ’John’)</i></span><br/>
+<span class="footnotesize"><i>a.blah()</i></span>
+</blockquote>
+<div class="Standard">
+Results:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>My first name is John </i></span><br/>
+<span class="footnotesize"><i>My last name is Doe </i></span>
+</blockquote>
+<div class="Standard">
+Here is another example:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#shop.py</i></span><br/>
+<span class="footnotesize"><i>class cart():</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+def __init__(self):</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+self.food = "beans"</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+self.amt = 0</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+def buyfood(self,amt):</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+self.amt += amt</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print "You purchased" ,amt,"cans",self.food</i></span><br/>
+<span class="footnotesize"><i>checkout = cart()</i></span><br/>
+<span class="footnotesize"><i>checkout.buyfood(5)</i></span>
+</blockquote>
+<div class="Standard">
+Results:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>You purchased 5 cans beans </i></span>
+</blockquote>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-6.1.5">6.1.5</a> <a class="IndexReference" name="entry-OOP-Destructor-0" href="#index-OOP-Destructor">↓</a>Destructor
+</h3>
+<div class="Standard">
+Here is a small example of a destructor. Though I hardly ever use destructors in my code, they do exist and can be useful.
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#des.py</i></span><br/>
+<span class="footnotesize"><i>class Des():</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+def __init__(self, x):</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+self.x = x</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print self.x, ’ready’</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+def __del__(self):</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print self.x-1, ’destroyed’</i></span><br/>
+<span class="footnotesize"><i>x = Des(1)</i></span>
+</blockquote>
+<div class="Standard">
+Results:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>1 ready </i></span><br/>
+<span class="footnotesize"><i>0 destroyed</i></span>
+</blockquote>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-6.1.6">6.1.6</a> <a class="IndexReference" name="entry-OOP-Inheritance-0" href="#index-OOP-Inheritance">↓</a>Inheritance
+</h3>
+<div class="Standard">
+You can develop a class that inherits the values of another class. This example shows you how to inherit the ’first()’ class in the ’second()’ class as ’class second(first)’: 
+</div>
+<div class="Standard">
+<b>Pay ATTENTION to indentation!</b>
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#in.py</i></span><br/>
+<span class="footnotesize"><i>class first():</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+n = 0 </i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+def __init__(self, color=’red’):</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+self.color = color</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+def Hello1(self):</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print "Hello from first class!"</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+def Color(self):</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print "My color from first class", self.color</i></span><br/>
+<span class="footnotesize"><i>class second(first):</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+def Hello2(self):</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print "Hello from second class!"</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print self.n, "is my favorite number"</i></span><br/>
+<span class="footnotesize"><i>a0=first()</i></span><br/>
+<span class="footnotesize"><i>a0.Color()</i></span><br/>
+<span class="footnotesize"><i>print ’-------’</i></span><br/>
+<span class="footnotesize"><i>a1=first(’blue’)</i></span><br/>
+<span class="footnotesize"><i>a1.Hello1()</i></span><br/>
+<span class="footnotesize"><i>a1.Color()</i></span><br/>
+<span class="footnotesize"><i>print ’-------’</i></span><br/>
+<span class="footnotesize"><i>a2=second(’white’)</i></span><br/>
+<span class="footnotesize"><i>a2.Hello1()</i></span><br/>
+<span class="footnotesize"><i>a2.Hello2()</i></span><br/>
+<span class="footnotesize"><i>a2.Color()</i></span>
+</blockquote>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-6.1.7">6.1.7</a> <a class="IndexReference" name="entry-OOP-private-0" href="#index-OOP-private">↓</a>__private
+</h3>
+<div class="Standard">
+The <a class="IndexReference" name="entry-Double-underscore-0" href="#index-Double-underscore">↓</a>Double underscore prefix is dealt with using <a class="IndexReference" name="entry-name-mangling-0" href="#index-name-mangling">↓</a>name mangling to effectively make it private within class or object.
+</div>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-6.1.8">6.1.8</a> The Kung Fu of Class
+</h3>
+<div class="Standard">
+All classes in python are derived from a special top down <a class="IndexReference" name="entry-parent-0" href="#index-parent">↓</a>parent class called object that may or may not be <a class="IndexReference" name="entry-explicitly-0" href="#index-explicitly">↓</a>explicitly derived.
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>class KungFu(Object):</i></span>
+</blockquote>
+<div class="Standard">
+In Python a class that is derived from the ’superclass’ is called the ’subclass’. Let’s inherent from the parent class in the example below.
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#kungfu.py</i></span><br/>
+<span class="footnotesize"><i>class KungFu(object):</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+mystr=&rdquo;the master&rdquo;</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+pass</i></span><br/>
+<span class="footnotesize"><i>class Master(KungFu):</i></span>
+</blockquote>
+<blockquote class="Quotation">
+<table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+<span class="footnotesize"><i>pass</i></span>
+</blockquote>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>teacher=Master.mystr</i></span><br/>
+<span class="footnotesize"><i>print teacher</i></span>
+</blockquote>
+<div class="Standard">
+Results:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>The master</i></span>
+</blockquote>
+<div class="Standard">
+Now override attribute value in <a class="IndexReference" name="entry-OOP-subclass-0" href="#index-OOP-subclass">↓</a>subclass.
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#kungfu1.py</i></span><br/>
+<span class="footnotesize"><i>class KungFu(object):</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+mystr=&rdquo;the master&rdquo;</i></span><br/>
+<span class="footnotesize"><i>class Master(KungFu):</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+mystr=&rdquo;Student is not the master&rdquo;</i></span><br/>
+<span class="footnotesize"><i>teacher=Master.mystr</i></span><br/>
+<span class="footnotesize"><i>print teacher</i></span>
+</blockquote>
+<div class="Standard">
+Results:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>Student is not the master</i></span>
+</blockquote>
+<div class="Standard">
+Execute method from parent class inside subclass.
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#kungfu2.py</i></span><br/>
+<span class="footnotesize"><i>class KungFu(object):</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+mystr=&rdquo;the master&rdquo;</i></span><br/>
+<span class="footnotesize"><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+def crane(self):</span><br/>
+<span class="footnotesize"><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print &rdquo;crane kick&rdquo;</span><br/>
+<span class="footnotesize"><i>class Master(KungFu):</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+mystr=&rdquo;Student is not the master&rdquo;</i></span><br/>
+<span class="footnotesize"><i>teacher=Master()</i></span><br/>
+<span class="footnotesize"><i>teacher.crane()</i></span>
+</blockquote>
+<div class="Standard">
+Results:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>crane kick</i></span>
+</blockquote>
+<div class="Standard">
+Override parent class with sublcass.
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#kungfu3.py</i></span><br/>
+<span class="footnotesize"><i>class KungFu(object):</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+mystr=&rdquo;the master&rdquo;</i></span><br/>
+<span class="footnotesize"><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+def crane(self):</span><br/>
+<span class="footnotesize"><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print &rdquo;crane kick&rdquo;</span><br/>
+<span class="footnotesize"><i>class Master(KungFu):</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+mystr=&rdquo;Student is not the master&rdquo;</i></span><br/>
+<span class="footnotesize"><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+def crane(self,bstr):</span><br/>
+<span class="footnotesize"><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print &rdquo;must learn crane kick&rdquo;</span><br/>
+<span class="footnotesize"><i>teacher=Master()</i></span><br/>
+<span class="footnotesize"><i>teacher.crane(1)</i></span>
+</blockquote>
+<div class="Standard">
+Results:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>must learn crane kick</i></span>
+</blockquote>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-6.1.9">6.1.9</a> Iterate Over Unknown Objects
+</h3>
+<div class="Standard">
+Time and again I have found myself working with large applications that are poorly documented. Below is a handy method to parse potentially unknown objects via subclass. Pretend ’class bar’ has a lot of methods (perhaps thousands of methods) and you want to generate a list for easy lookup. This is a great troubleshooting exercise to get a summary of methods contained within a class. 
+</div>
+<div class="Standard">
+<b>Pay ATTENTION to indentation!</b>
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>#!/usr/bin/python</i></span><br/>
+<span class="footnotesize"><i>#unknown.py</i></span><br/>
+<span class="footnotesize"><i>class bar: </i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+def blah(self): </i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print "cool" </i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+def strange(self): </i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print "wow" </i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+def nice(self): </i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print "very cool now"</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+def bazinga(self):</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print &ldquo;bazinga&rdquo;</i></span><br/>
+<span class="footnotesize"><i>class foo(bar): </i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+def __iter__(self): # iterate unknown</i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+return iter(vars(bar)) # vars built-in attr</i></span><br/>
+<span class="footnotesize"><i>a=foo()</i></span><br/>
+<span class="footnotesize"><i>for i in a: </i></span><br/>
+<span class="footnotesize"><i><table>
+<tr>
+<td align="center" valign="top">
+
+</td>
+
+</tr>
+
+</table>
+print i </i></span>
+</blockquote>
+<div class="Standard">
+Results:
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>__module__</i></span><br/>
+<span class="footnotesize"><i>bazinga</i></span><br/>
+<span class="footnotesize"><i>blah</i></span><br/>
+<span class="footnotesize"><i>strange </i></span><br/>
+<span class="footnotesize"><i>__doc__ </i></span><br/>
+<span class="footnotesize"><i>nice </i></span>
+</blockquote>
+<div class="Standard">
+As you venture further into OOP. Subclassing a parent class to change an attribute will occur frequently and eventually you will want to track your own methods or an existing method this is a brief example on how to look at your work from a different perspective. 
+</div>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-6.1.10">6.1.10</a> <a class="IndexReference" name="entry-OOP-Multiple-Inheritence-super-0" href="#index-OOP-Multiple-Inheritence-super">↓</a>Multiple Inheritence 
+</h3>
+<div class="Standard">
+I’m not crazy about using multiple inheritance or super. Multiple inheritance should be avoid and replaced with design patterns and if you plan to use ’super()’ it’s usage should be consistent. In class hierarchy, super should be used everywhere or nowhere. Mixing super and classic call is extremely confusing and doesn’t make things explicit. Instead focus on customizing classes and leverage methods such as ’__getattr__’, ’__setattr__’ and ’__getattribute__’.
+</div>
+<div class="Standard">
+Please do not type the following code below, it is only an example: Use the IDLE interpreter and type help(super)
+</div>
+<div class="Standard">
+<b>&gt;&gt;&gt;help(super)</b>
+</div>
+<blockquote class="Quotation">
+<span class="footnotesize"><i>class super(object) </i></span><br/>
+<span class="footnotesize">| <i>super(type, obj) -&gt; bound super object; requires isinstance(obj, type) </i></span><br/>
+<span class="footnotesize">| <i>super(type) -&gt; unbound super object </i></span><br/>
+<span class="footnotesize">| <i>super(type, type2) -&gt; bound super object; requires issubclass(type2, type) </i></span><br/>
+<span class="footnotesize">| <i>Typical use to call a cooperative superclass method: </i></span><br/>
+<span class="footnotesize">| <i>class C(B): </i></span><br/>
+<span class="footnotesize">| <i>def meth(self, arg): </i></span><br/>
+<span class="footnotesize"><i>etc...</i></span>
+</blockquote>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-6.1.11">6.1.11</a> Summary
+</h3>
+<div class="Standard">
+These are the basic terminologies of object-oriented programming and mastering these concepts will allow you to build and scale large applications. 
+</div>

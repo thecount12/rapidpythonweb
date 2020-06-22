@@ -1,0 +1,16 @@
+<div class="Standard">
+<p>This book would not have been possible without the guidance and support of many people in my life.</p>
+</div>
+<div class="Standard">
+<p>Thanks to my friends who have always encouraged me through trials and tribulations navigating the fiercely competitive computer technology industry. They always encouraged me to remember to stay focused and believe in myself.</p>
+</div>
+<div class="Standard">
+<p>Thanks to Dennis Feick who had enduring faith in my family during some of the worst economic times as a programmer these last 7 years.</p>
+</div>
+<div class="Standard">
+<p>Thanks to the wonderful programmers I’ve known and worked with: Dan White and Daniel Yount have both been helpful and inspirational in this matter. I appreciate their tutelage over the years. It was a pleasure working with them.</p>
+</div>
+<div class="Standard">
+<p>Thanks to my family, Rachel, Olaf, and Mckinzie who stood by me and endured the late hours of work, overtime, and sacrifices made as a writer while working multiple jobs. </p>
+</div>
+<div class="Standard">
